@@ -7,17 +7,12 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Dependencias
 node_modules
-.pnp
-.pnp.js
-
-# Build / salida
 dist
 dist-ssr
 *.local
 
-# Editor / IDE
+# Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -27,14 +22,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-# Variables de entorno
-.env
-.env.local
-.env.*.local
-
-# Caché de TypeScript
-*.tsbuildinfo
-
-# Archivos generados por gh-pages (no deberían existir en local, pero por si acaso)
-.cache
