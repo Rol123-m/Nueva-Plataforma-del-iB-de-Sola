@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Liderazgo de Servicio - Clase 2: Los 4 Estilos de Liderazgo | Instituto Bíblico</title>
+    <style>
+        /* ============================================ */
+        /* RESET Y ESTILOS GLOBALES RESPONSIVOS         */
+        /* ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #f6f9fc 0%, #edf2f7 100%);
+            min-height: 100vh;
+            line-height: 1.5;
+            color: #2d3748;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== HEADER ===== */
+        .clase-header {
+            background: linear-gradient(135deg, #1a2a3a 0%, #2c3e50 50%, #2980b9 100%);
+            color: white;
+            padding: 40px 0;
+            position: relative;
+        }
+
+        .header-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .btn-volver {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .btn-volver:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .clase-badge {
+            background: rgba(0,0,0,0.3);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+        }
+
+        .clase-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitulo-clase {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* ===== PROGRESO ===== */
+        .progreso-clase {
+            background: white;
+            border-radius: 50px;
+            padding: 12px 20px;
+            margin: 30px 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .progreso-barra {
+            width: 40%;
+            height: 8px;
+            background: linear-gradient(90deg, #3498db, #2c3e50);
+            border-radius: 10px;
+        }
+
+        /* ===== OBJETIVO ===== */
+        .objetivo-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-left: 6px solid #3498db;
+        }
+
+        .objetivo-card h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        /* ===== VERSÍCULO ===== */
+        .versiculo-destacado {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-bottom: 4px solid #3498db;
+        }
+
+        .versiculo-destacado .texto {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #2c3e50;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .versiculo-destacado cite {
+            color: #3498db;
+            font-weight: 600;
+        }
+
+        /* ===== TEMA CARD ===== */
+        .tema-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .tema-card h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .pregunta-debate {
+            background: #fff8e7;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            border-left: 4px solid #f39c12;
+        }
+
+        /* ===== ESTILOS DETALLE ===== */
+        .estilo-detalle-card {
+            background: white;
+            border-radius: 24px;
+            margin: 40px 0;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .estilo-detalle-rojo { border-top: 6px solid #e74c3c; }
+        .estilo-detalle-amarillo { border-top: 6px solid #f1c40f; }
+        .estilo-detalle-verde { border-top: 6px solid #27ae60; }
+        .estilo-detalle-azul { border-top: 6px solid #3498db; }
+
+        .estilo-detalle-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;
+            padding: 30px 30px 0 30px;
+        }
+
+        .estilo-detalle-icono {
+            font-size: 3.5rem;
+        }
+
+        .estilo-detalle-titulos h2 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: #2c3e50;
+        }
+
+        .temperamento-badge {
+            display: inline-block;
+            background: #ecf0f1;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        .estilo-frase-principal {
+            background: #f8fafc;
+            padding: 18px 25px;
+            margin: 20px 25px;
+            border-radius: 16px;
+            font-style: italic;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-left: 4px solid;
+        }
+
+        .estilo-detalle-rojo .estilo-frase-principal { border-left-color: #e74c3c; }
+        .estilo-detalle-amarillo .estilo-frase-principal { border-left-color: #f1c40f; }
+        .estilo-detalle-verde .estilo-frase-principal { border-left-color: #27ae60; }
+        .estilo-detalle-azul .estilo-frase-principal { border-left-color: #3498db; }
+
+        .estilo-seccion {
+            padding: 0 25px;
+        }
+
+        .estilo-seccion h3 {
+            font-size: 1.3rem;
+            margin: 25px 0 15px;
+            color: #2c3e50;
+        }
+
+        .estilo-seccion ul {
+            padding-left: 20px;
+        }
+
+        .estilo-seccion li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .estilo-grid-2cols {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px 25px;
+        }
+
+        .estilo-fortalezas, .estilo-debilidades {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 16px;
+        }
+
+        .estilo-fortalezas h3, .estilo-debilidades h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .estilo-consejo {
+            background: #fff8e7;
+            padding: 20px 25px;
+            margin: 20px 25px 30px 25px;
+            border-radius: 16px;
+            border-left: 4px solid #f39c12;
+        }
+
+        /* ===== TABLA COMPARATIVA ===== */
+        .comparacion-card {
+            background: white;
+            border-radius: 24px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            overflow-x: auto;
+        }
+
+        .comparacion-card h2 {
+            margin-bottom: 20px;
+        }
+
+        .tabla-comparativa {
+            width: 100%;
+            min-width: 600px;
+            border-collapse: collapse;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .tabla-comparativa th {
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .tabla-comparativa td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .tabla-comparativa tr:hover td {
+            background: #f8fafc;
+        }
+
+        /* ===== INTEGRACIÓN ===== */
+        .servicio-card {
+            background: linear-gradient(135deg, #1a2a3a, #2c3e50);
+            color: white;
+            border-radius: 24px;
+            padding: 40px 30px;
+            margin: 40px 0;
+        }
+
+        .servicio-card h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .definicion-grande {
+            font-size: 1.8rem;
+            text-align: center;
+            margin: 30px 0;
+            font-weight: 700;
+        }
+
+        .integracion-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .integracion-item {
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 16px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .integracion-icono {
+            font-size: 2.5rem;
+        }
+
+        .integracion-item h3 {
+            margin: 15px 0 10px;
+        }
+
+        .integracion-item p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .ejemplo-integracion {
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 16px;
+            margin-top: 20px;
+        }
+
+        /* ===== CONFLICTOS ===== */
+        .conflictos-card {
+            background: white;
+            border-radius: 24px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .conflicto-item {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .conflicto-titulo {
+            font-weight: 800;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .conflicto-causa, .conflicto-solucion {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        /* ===== CASO ===== */
+        .caso-card {
+            background: white;
+            border-radius: 24px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-left: 6px solid #e74c3c;
+        }
+
+        .caso-intro {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 16px;
+            margin: 20px 0;
+        }
+
+        .caso-descripcion {
+            line-height: 1.7;
+        }
+
+        /* ===== NAVEGACIÓN ===== */
+        .navegacion-clases {
+            background: white;
+            border-radius: 50px;
+            padding: 25px 30px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .clase-actual {
+            display: inline-block;
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+            padding: 8px 25px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        .botones-navegacion {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn-volver-clase, .btn-siguiente {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-volver-clase {
+            background: #7f8c8d;
+            color: white;
+        }
+
+        .btn-siguiente {
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+        }
+
+        .btn-volver-clase:hover, .btn-siguiente:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* ===== FOOTER ===== */
+        .clase-footer {
+            background: #1a2a3a;
+            color: #a0aec0;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+            
+            .clase-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .estilo-detalle-header {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px 20px 0 20px;
+            }
+            
+            .estilo-grid-2cols {
+                grid-template-columns: 1fr;
+                padding: 15px 20px;
+            }
+            
+            .estilo-seccion {
+                padding: 0 20px;
+            }
+            
+            .estilo-frase-principal {
+                margin: 15px 20px;
+                font-size: 1rem;
+            }
+            
+            .estilo-consejo {
+                margin: 15px 20px 25px 20px;
+            }
+            
+            .definicion-grande {
+                font-size: 1.4rem;
+            }
+            
+            .integracion-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .navegacion-clases {
+                border-radius: 25px;
+                padding: 20px;
+            }
+            
+            .botones-navegacion {
+                flex-direction: column;
+            }
+            
+            .btn-volver-clase, .btn-siguiente {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .versiculo-destacado .texto {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .clase-header h1 {
+                font-size: 1.5rem;
+            }
+            
+            .subtitulo-clase {
+                font-size: 1rem;
+            }
+            
+            .objetivo-card, .tema-card, .comparacion-card, .conflictos-card, .caso-card {
+                padding: 20px;
+            }
+            
+            .integracion-item {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="clase-header">
+        <div class="container">
+            <div class="header-nav">
+                <a href="../../asignatura.html?id=liderazgo-servicio" class="btn-volver">← Volver a Liderazgo de Servicio</a>
+                <span class="clase-badge">IB-MT-702 · Clase 2</span>
+            </div>
+            <h1>Liderazgo de Servicio</h1>
+            <p class="subtitulo-clase">Conócete a ti mismo: Los 4 estilos de liderazgo</p>
+            <div class="meta-info">
+                <span>Instituto Bíblico de Sola</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="progreso-clase">
+            <div class="progreso-barra" style="width: 40%"></div>
+            <span>Clase 2 de 5 · 40% del curso completado</span>
+        </div>
+
+        <section class="objetivo-card">
+            <h2>🎯 Objetivo de la Clase</h2>
+            <p>Comprender en profundidad los cuatro estilos de liderazgo (Diseñador-Emprendedor, Motivador-Influyente, Cooperador de Equipo y Realizador-Implementador), reconociendo sus características distintivas, fortalezas, debilidades, cómo se integran en un equipo saludable y los conflictos naturales que surgen entre ellos.</p>
+        </section>
+
+        <section class="versiculo-destacado">
+            <div class="versiculo-contenido">
+                <p class="texto">"Porque de la manera que en un cuerpo tenemos muchos miembros, pero no todos los miembros tienen la misma función, así nosotros, siendo muchos, somos un cuerpo en Cristo, y todos miembros los unos de los otros."</p>
+                <cite>Romanos 12:4-5</cite>
+            </div>
+        </section>
+
+        <section class="tema-card">
+            <h2>🔍 El autoconocimiento: base del liderazgo de servicio</h2>
+            <p>El Salmo 139 nos enseña que Dios nos conoce íntimamente: <em>"Tú has escudriñado mi manera de ser, y me conoces"</em>. Para liderar como Jesús, primero debemos conocernos a nosotros mismos: nuestros dones, temperamentos, fortalezas y debilidades. El líder siervo no ignora sus áreas de oportunidad; las reconoce y aprende a complementarse con otros.</p>
+            <p>El manual <strong>"Liderazgo de Servicio: Ser el líder que Dios quiere que sea"</strong> (DAI) nos presenta cuatro estilos de liderazgo. Cada persona tiene una mezcla única, pero uno o dos suelen ser predominantes. <strong>Ningún estilo es mejor que otro</strong>. Todos son necesarios en el Cuerpo de Cristo.</p>
+            <div class="pregunta-debate">
+                <p><strong>📌 Reflexión inicial:</strong> ¿Alguna vez has chocado con alguien porque "piensa muy diferente a ti"? ¿Has sentido que liderar te cuesta porque otros no entienden tu ritmo o tus prioridades?</p>
+            </div>
+        </section>
+
+        <!-- ESTILO 1: DISEÑADOR-EMPRENDEDOR -->
+        <section class="estilo-detalle-card estilo-detalle-rojo">
+            <div class="estilo-detalle-header">
+                <div class="estilo-detalle-icono">🔥</div>
+                <div class="estilo-detalle-titulos">
+                    <h2>Diseñador-Emprendedor</h2>
+                    <span class="temperamento-badge">Temperamento asociado: Colérico</span>
+                </div>
+            </div>
+            <div class="estilo-frase-principal">"Tomo el control y asumo el reto de cambiar la situación para que el ministerio sea más efectivo."</div>
+            <div class="estilo-seccion">
+                <h3>📌 Características principales</h3>
+                <ul>
+                    <li><strong>Orientación:</strong> Tarea / Activo. Toma la iniciativa, enfocado en resultados y cambios.</li>
+                    <li><strong>Motivación:</strong> Le mueve el desafío, la eficacia y la innovación.</li>
+                    <li><strong>Estilo natural:</strong> Prefiere libertad de acción, variedad, proyectos desafiantes.</li>
+                    <li><strong>Bajo presión:</strong> Se vuelve más controlador y autocrático.</li>
+                </ul>
+            </div>
+            <div class="estilo-grid-2cols">
+                <div class="estilo-fortalezas">
+                    <h3>✅ Fortalezas</h3>
+                    <ul>
+                        <li>Visión clara del futuro</li>
+                        <li>Decisión firme y rápida</li>
+                        <li>Capacidad de asumir riesgos calculados</li>
+                        <li>Independencia y seguridad</li>
+                        <li>Genera cambios necesarios</li>
+                    </ul>
+                </div>
+                <div class="estilo-debilidades">
+                    <h3>⚠️ Debilidades</h3>
+                    <ul>
+                        <li>Percibido como autoritario o dictatorial</li>
+                        <li>Dificultad para escuchar</li>
+                        <li>Impaciente con procesos lentos</li>
+                        <li>Ignora detalles y emociones</li>
+                        <li>Bajo presión, se vuelve rígido</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="estilo-seccion">
+                <h3>⚡ Conflictos comunes</h3>
+                <ul>
+                    <li><strong>vs. Cooperador:</strong> Acción vs. Armonía. El Diseñador quiere resultados ya; el Cooperador busca consenso.</li>
+                    <li><strong>vs. Realizador:</strong> Riesgo vs. Seguridad. El Diseñador asume riesgos; el Realizador exige plan detallado.</li>
+                </ul>
+            </div>
+            <div class="estilo-consejo">
+                <strong>💡 Consejo:</strong> Antes de lanzarte a la acción, pregúntate: ¿he escuchado a mi equipo? La velocidad sin empatía quema puentes.
+            </div>
+        </section>
+
+        <!-- ESTILO 2: MOTIVADOR-INFLUYENTE -->
+        <section class="estilo-detalle-card estilo-detalle-amarillo">
+            <div class="estilo-detalle-header">
+                <div class="estilo-detalle-icono">🌟</div>
+                <div class="estilo-detalle-titulos">
+                    <h2>Motivador-Influyente</h2>
+                    <span class="temperamento-badge">Temperamento asociado: Sanguíneo</span>
+                </div>
+            </div>
+            <div class="estilo-frase-principal">"Motivo e influencio a otros para que trabajen juntos y logren resultados importantes."</div>
+            <div class="estilo-seccion">
+                <h3>📌 Características principales</h3>
+                <ul>
+                    <li><strong>Orientación:</strong> Personas / Activo. Extrovertido, entusiasta, "alma de la fiesta".</li>
+                    <li><strong>Motivación:</strong> Busca reconocimiento, relaciones amistosas, libertad de expresión.</li>
+                    <li><strong>Estilo natural:</strong> Inspira, conecta personas, genera entusiasmo.</li>
+                    <li><strong>Bajo presión:</strong> Puede volverse hipersensible o manipulador.</li>
+                </ul>
+            </div>
+            <div class="estilo-grid-2cols">
+                <div class="estilo-fortalezas">
+                    <h3>✅ Fortalezas</h3>
+                    <ul>
+                        <li>Genera entusiasmo y optimismo</li>
+                        <li>Excelente comunicador, persuasivo</li>
+                        <li>Construye relaciones rápidamente</li>
+                        <li>Creativo e innovador</li>
+                        <li>Motiva a la colaboración</li>
+                    </ul>
+                </div>
+                <div class="estilo-debilidades">
+                    <h3>⚠️ Debilidades</h3>
+                    <ul>
+                        <li>Impulsivo; habla más de lo que cumple</li>
+                        <li>Poca atención a detalles y planificación</li>
+                        <li>Puede ser percibido como manipulador</li>
+                        <li>Dificultad con la crítica</li>
+                        <li>Evita tareas minuciosas</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="estilo-seccion">
+                <h3>⚡ Conflictos comunes</h3>
+                <ul>
+                    <li><strong>vs. Realizador:</strong> Entusiasmo vs. Precisión. El Motivador quiere avanzar con emoción; el Realizador pide datos.</li>
+                    <li><strong>vs. Diseñador:</strong> El Motivador busca consenso; el Diseñador va directo al resultado.</li>
+                </ul>
+            </div>
+            <div class="estilo-consejo">
+                <strong>💡 Consejo:</strong> Antes de prometer algo con entusiasmo, pregúntate: ¿puedo cumplir esto? El entusiasmo sin realismo genera expectativas rotas.
+            </div>
+        </section>
+
+        <!-- ESTILO 3: COOPERADOR DE EQUIPO -->
+        <section class="estilo-detalle-card estilo-detalle-verde">
+            <div class="estilo-detalle-header">
+                <div class="estilo-detalle-icono">🤝</div>
+                <div class="estilo-detalle-titulos">
+                    <h2>Cooperador de Equipo</h2>
+                    <span class="temperamento-badge">Temperamento asociado: Flemático</span>
+                </div>
+            </div>
+            <div class="estilo-frase-principal">"Coopero con los demás para implementar planes y alcanzar la visión, manteniendo la armonía."</div>
+            <div class="estilo-seccion">
+                <h3>📌 Características principales</h3>
+                <ul>
+                    <li><strong>Orientación:</strong> Personas / Pasivo. Pacificador, leal, paciente, buen oyente.</li>
+                    <li><strong>Motivación:</strong> Busca seguridad, estabilidad, métodos establecidos, armonía.</li>
+                    <li><strong>Estilo natural:</strong> Apoya, sirve, construye relaciones sólidas.</li>
+                    <li><strong>Bajo presión:</strong> Se paraliza, se vuelve indeciso, huye del conflicto.</li>
+                </ul>
+            </div>
+            <div class="estilo-grid-2cols">
+                <div class="estilo-fortalezas">
+                    <h3>✅ Fortalezas</h3>
+                    <ul>
+                        <li>Excelente oyente, genera confianza</li>
+                        <li>Leal y comprometido</li>
+                        <li>Paciente y comprensivo</li>
+                        <li>Mantiene la armonía</li>
+                        <li>Servicial y estable</li>
+                    </ul>
+                </div>
+                <div class="estilo-debilidades">
+                    <h3>⚠️ Debilidades</h3>
+                    <ul>
+                        <li>Indeciso; le cuesta tomar postura</li>
+                        <li>Evita el conflicto necesario</li>
+                        <li>Lento para adaptarse a cambios</li>
+                        <li>Percibido como conformista</li>
+                        <li>Dificultad para decir "no"</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="estilo-seccion">
+                <h3>⚡ Conflictos comunes</h3>
+                <ul>
+                    <li><strong>vs. Diseñador:</strong> El Cooperador busca consenso; el Diseñador quiere acción inmediata.</li>
+                    <li><strong>vs. Motivador:</strong> El Cooperador necesita estabilidad; el Motivador trae cambios constantes.</li>
+                </ul>
+            </div>
+            <div class="estilo-consejo">
+                <strong>💡 Consejo:</strong> El conflicto no es el enemigo; a veces es el camino hacia una decisión más sabia. No tienes que gustarle a todo el mundo; tienes que liderar.
+            </div>
+        </section>
+
+        <!-- ESTILO 4: REALIZADOR-IMPLEMENTADOR -->
+        <section class="estilo-detalle-card estilo-detalle-azul">
+            <div class="estilo-detalle-header">
+                <div class="estilo-detalle-icono">📐</div>
+                <div class="estilo-detalle-titulos">
+                    <h2>Realizador-Implementador</h2>
+                    <span class="temperamento-badge">Temperamento asociado: Melancólico</span>
+                </div>
+            </div>
+            <div class="estilo-frase-principal">"Hago realidad los planes y la visión con excelencia y atención al detalle."</div>
+            <div class="estilo-seccion">
+                <h3>📌 Características principales</h3>
+                <ul>
+                    <li><strong>Orientación:</strong> Tarea / Pasivo. Analítico, meticuloso, ordenado, perfeccionista.</li>
+                    <li><strong>Motivación:</strong> Busca precisión, planificación, seguridad, excelencia.</li>
+                    <li><strong>Estilo natural:</strong> Ejecuta con calidad, cumple plazos, sigue procedimientos.</li>
+                    <li><strong>Bajo presión:</strong> Se vuelve más crítico, rígido, exigente.</li>
+                </ul>
+            </div>
+            <div class="estilo-grid-2cols">
+                <div class="estilo-fortalezas">
+                    <h3>✅ Fortalezas</h3>
+                    <ul>
+                        <li>Atención meticulosa a detalles</li>
+                        <li>Planificación estratégica</li>
+                        <li>Compromiso con la excelencia</li>
+                        <li>Cumplimiento de plazos</li>
+                        <li>Ordenado y disciplinado</li>
+                    </ul>
+                </div>
+                <div class="estilo-debilidades">
+                    <h3>⚠️ Debilidades</h3>
+                    <ul>
+                        <li>Perfeccionismo extremo</li>
+                        <li>Rígido y poco flexible</li>
+                        <li>Percibido como crítico</li>
+                        <li>Teme al riesgo</li>
+                        <li>Dificultad para expresar emociones</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="estilo-seccion">
+                <h3>⚡ Conflictos comunes</h3>
+                <ul>
+                    <li><strong>vs. Motivador:</strong> Precisión vs. Entusiasmo. El Realizador exige datos; el Motivador quiere avanzar.</li>
+                    <li><strong>vs. Diseñador:</strong> El Realizador necesita plan; el Diseñador quiere acción rápida.</li>
+                </ul>
+            </div>
+            <div class="estilo-consejo">
+                <strong>💡 Consejo:</strong> Lo perfecto es enemigo de lo bueno. Un plan implementado al 80% vale más que un plan perfecto que nunca se ejecuta.
+            </div>
+        </section>
+
+        <!-- TABLA COMPARATIVA -->
+        <section class="comparacion-card">
+            <h2>📊 Tabla resumen: Los 4 estilos de liderazgo</h2>
+            <div style="overflow-x: auto;">
+                <table class="tabla-comparativa">
+                    <thead>
+                        <tr><th>Estilo</th><th>Temperamento</th><th>Orientación</th><th>Fortaleza Clave</th><th>Debilidad Clave</th><th>Choca con</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-left: 4px solid #e74c3c;"><td><strong>🔴 Diseñador</strong></td><td>Colérico</td><td>Tarea/Activo</td><td>Visión, acción</td><td>Autoritario</td><td>Cooperador, Realizador</td></tr>
+                        <tr style="border-left: 4px solid #f1c40f;"><td><strong>🟡 Motivador</strong></td><td>Sanguíneo</td><td>Personas/Activo</td><td>Entusiasmo</td><td>Impulsivo</td><td>Realizador, Diseñador</td></tr>
+                        <tr style="border-left: 4px solid #27ae60;"><td><strong>🟢 Cooperador</strong></td><td>Flemático</td><td>Personas/Pasivo</td><td>Armonía</td><td>Indeciso</td><td>Diseñador, Motivador</td></tr>
+                        <tr style="border-left: 4px solid #3498db;"><td><strong>🔵 Realizador</strong></td><td>Melancólico</td><td>Tarea/Pasivo</td><td>Excelencia</td><td>Rígido</td><td>Motivador, Diseñador</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- INTEGRACIÓN -->
+        <section class="servicio-card">
+            <h2>🔄 Integración: Cómo se complementan</h2>
+            <p class="definicion-grande">"Juntos somos más fuertes"</p>
+            <div class="integracion-grid">
+                <div class="integracion-item"><span class="integracion-icono">🔴</span><h3>Diseñador</h3><p>Aporta visión y empuje. Sin él, el equipo se estanca.</p></div>
+                <div class="integracion-item"><span class="integracion-icono">🟡</span><h3>Motivador</h3><p>Aporta entusiasmo y conexión. Sin él, el equipo se vuelve frío.</p></div>
+                <div class="integracion-item"><span class="integracion-icono">🟢</span><h3>Cooperador</h3><p>Aporta estabilidad y armonía. Sin él, el equipo se desgarra.</p></div>
+                <div class="integracion-item"><span class="integracion-icono">🔵</span><h3>Realizador</h3><p>Aporta plan y ejecución precisa. Sin él, las visiones no se concretan.</p></div>
+            </div>
+            <div class="ejemplo-integracion">
+                <h3>📖 El caso de Víctor (manual DAI)</h3>
+                <p>Víctor era Cooperador. Se sentía inseguro hasta que entendió que necesitaba rodearse de un Diseñador (visión), un Realizador (excelencia) y un Motivador (ánimo). Su debilidad no era un defecto; era una invitación a complementarse.</p>
+            </div>
+        </section>
+
+        <!-- CONFLICTOS -->
+        <section class="conflictos-card">
+            <h2>⚔️ Conflictos naturales entre estilos</h2>
+            <div class="conflicto-item"><div class="conflicto-titulo">🔴 Diseñador vs. 🟢 Cooperador</div><div class="conflicto-causa"><strong>Causa:</strong> Acción vs. Armonía.</div><div class="conflicto-solucion"><strong>Solución:</strong> El Diseñador debe explicar el "por qué" de la urgencia. El Cooperador debe dar una respuesta en plazo fijo.</div></div>
+            <div class="conflicto-item"><div class="conflicto-titulo">🔴 Diseñador vs. 🔵 Realizador</div><div class="conflicto-causa"><strong>Causa:</strong> Riesgo vs. Seguridad.</div><div class="conflicto-solucion"><strong>Solución:</strong> El Diseñador debe dar un plan mínimo. El Realizador debe aceptar incertidumbre.</div></div>
+            <div class="conflicto-item"><div class="conflicto-titulo">🟡 Motivador vs. 🔵 Realizador</div><div class="conflicto-causa"><strong>Causa:</strong> Entusiasmo vs. Precisión.</div><div class="conflicto-solucion"><strong>Solución:</strong> El Motivador debe respaldar ideas con hechos. El Realizador debe dar espacio a la creatividad.</div></div>
+            <div class="conflicto-item"><div class="conflicto-titulo">🟢 Cooperador vs. 🔵 Realizador</div><div class="conflicto-causa"><strong>Causa:</strong> Personas vs. Tarea.</div><div class="conflicto-solucion"><strong>Solución:</strong> El Cooperador debe reconocer cuando la tarea es prioritaria. El Realizador debe mostrar empatía.</div></div>
+        </section>
+
+        <!-- CASO RESUMIDO -->
+        <section class="caso-card">
+            <h2>📖 Estudio de caso: Víctor (resumen)</h2>
+            <div class="caso-intro"><p><strong>Personajes:</strong> Víctor (Cooperador), Rev. Aquiles (Diseñador), Juan Li (Realizador), Cristina (Motivadora).</p><p><strong>Organización:</strong> MILE</p></div>
+            <div class="caso-descripcion"><p>Víctor se sentía inseguro. Su tío presionaba. Juan Li amenazaba con renunciar. Víctor evitaba el conflicto. Un día descubrió los 4 estilos. Entendió que no necesitaba ser como su tío, sino rodearse de los otros. Aprendió que los diferentes dones se complementan en el Cuerpo de Cristo.</p><p><strong>Lección:</strong> El líder siervo se conoce, valora a los diferentes y construye equipos diversos.</p></div>
+        </section>
+
+        <!-- NAVEGACIÓN -->
+        <div class="navegacion-clases">
+            <span class="clase-actual">Clase 2 de 5 · Los 4 estilos de liderazgo</span>
+            <div class="botones-navegacion">
+                <a href="clase-1.html" class="btn-volver-clase">← Clase 1: Introducción</a>
+                <a href="clase-3.html" class="btn-siguiente">Clase 3: Adaptando tu estilo →</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="clase-footer">
+        <div class="container">
+            <p>Instituto Bíblico "Iglesia Bautista de Sola" · Liderazgo de Servicio (IB-MT-702) · Clase 2: Los 4 estilos de liderazgo</p>
+        </div>
+    </footer>
+</body>
+</html>

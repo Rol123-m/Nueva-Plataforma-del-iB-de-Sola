@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Clase 3: Transmisión de la Biblia | De los Originales a las Traducciones</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ============================================
+           ESTILOS PROFESIONALES PARA CLASE TEOLÓGICA
+           Diseño moderno, elegante y educativo
+        ============================================ */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #1e3a3a;
+            --primary: #2c5e5a;
+            --primary-light: #4a7c76;
+            --accent-gold: #c9a87b;
+            --accent-burgundy: #9b4b3e;
+            --bg-warm: #fef9f0;
+            --bg-parchment: #faf6e9;
+            --text-dark: #2c2b28;
+            --text-soft: #4a4a44;
+            --shadow-md: 0 10px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -6px rgba(0,0,0,0.02);
+            --shadow-lg: 0 20px 30px -12px rgba(0,0,0,0.12);
+            --radius-lg: 24px;
+            --radius-md: 16px;
+            --radius-sm: 12px;
+        }
+
+        body {
+            background: var(--bg-warm);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+
+        /* Header Principal */
+        .hero-class {
+            background: linear-gradient(135deg, #1a3a38 0%, #2a5a55 50%, #1e4a46 100%);
+            color: white;
+            padding: 70px 0 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-class::before {
+            content: '📜';
+            position: absolute;
+            bottom: -30px;
+            right: -20px;
+            font-size: 180px;
+            opacity: 0.08;
+            pointer-events: none;
+            transform: rotate(-15deg);
+        }
+
+        .hero-class::after {
+            content: '✝️';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 100px;
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .class-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,240,0.2);
+            backdrop-filter: blur(4px);
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255,255,200,0.3);
+        }
+
+        .hero-class h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            max-width: 850px;
+        }
+
+        .hero-sub {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 650px;
+            margin-bottom: 30px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .meta-info span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0,0,0,0.25);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+        }
+
+        /* Contenido principal */
+        .content-wrapper {
+            margin: 50px auto 70px;
+        }
+
+        /* Secciones temáticas */
+        .theme-section {
+            background: white;
+            border-radius: var(--radius-lg);
+            margin-bottom: 40px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.2s ease, box-shadow 0.2s;
+            border: 1px solid #f0e6da;
+        }
+
+        .theme-section:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .section-header {
+            background: linear-gradient(95deg, #fef7ed 0%, #fffaf2 100%);
+            padding: 28px 35px;
+            border-bottom: 2px solid var(--accent-gold);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .section-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: white;
+            box-shadow: 0 8px 14px -8px rgba(44,94,90,0.4);
+        }
+
+        .section-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin: 0;
+            letter-spacing: -0.3px;
+        }
+
+        .section-sub {
+            color: var(--accent-burgundy);
+            font-weight: 500;
+            margin-left: auto;
+            font-size: 0.9rem;
+            background: rgba(201,168,123,0.15);
+            padding: 5px 14px;
+            border-radius: 40px;
+        }
+
+        .section-content {
+            padding: 32px 35px;
+        }
+
+        .section-content p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--text-soft);
+            margin-bottom: 1.2rem;
+        }
+
+        .highlight-box {
+            background: #f3efe7;
+            border-left: 5px solid var(--accent-gold);
+            padding: 20px 28px;
+            border-radius: var(--radius-sm);
+            margin: 24px 0;
+            font-style: normal;
+        }
+
+        .highlight-box i {
+            color: var(--primary);
+            margin-right: 10px;
+        }
+
+        .scribe-card {
+            display: flex;
+            gap: 25px;
+            background: linear-gradient(115deg, #f8f3ea, #ffffff);
+            border-radius: var(--radius-md);
+            padding: 28px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+            border: 1px solid #e8dfd2;
+        }
+
+        .scribe-icon {
+            font-size: 58px;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        .scribe-text {
+            flex: 1;
+        }
+
+        .scribe-text h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fefaf5;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            margin: 25px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .data-table th {
+            background: var(--primary-dark);
+            color: white;
+            padding: 14px 18px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 14px 18px;
+            border-bottom: 1px solid #e9dfd3;
+            color: var(--text-soft);
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .spectrum-line {
+            display: flex;
+            justify-content: space-between;
+            background: #e9e2d6;
+            border-radius: 60px;
+            padding: 8px 12px;
+            margin: 25px 0;
+            position: relative;
+            flex-wrap: wrap;
+        }
+
+        .spectrum-point {
+            text-align: center;
+            flex: 1;
+            padding: 8px;
+            background: white;
+            margin: 0 5px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--primary-dark);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .bible-versions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .version-card {
+            background: white;
+            border-radius: var(--radius-sm);
+            padding: 15px 20px;
+            flex: 1 1 180px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid #e2d8cc;
+            transition: all 0.2s;
+        }
+
+        .version-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-2px);
+        }
+
+        .version-name {
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .verse-quote {
+            background: var(--bg-parchment);
+            padding: 22px 28px;
+            border-radius: var(--radius-md);
+            margin: 25px 0;
+            font-style: italic;
+            border-left: 6px solid var(--accent-gold);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: #3b3a36;
+        }
+
+        .verse-quote strong {
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+            color: var(--accent-burgundy);
+        }
+
+        .grid-2col {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        @media (max-width: 780px) {
+            .grid-2col {
+                grid-template-columns: 1fr;
+            }
+            .hero-class h1 {
+                font-size: 2.2rem;
+            }
+            .section-header h2 {
+                font-size: 1.5rem;
+            }
+            .section-content {
+                padding: 24px;
+            }
+            .section-header {
+                padding: 20px 24px;
+            }
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #1e3a38, #2c5e5a);
+            color: white;
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .conclusion-box h3 {
+            font-size: 1.8rem;
+            font-family: 'Cormorant Garamond', serif;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid #e2d8cc;
+            margin-top: 40px;
+            color: #7c6e5d;
+            font-size: 0.85rem;
+        }
+
+        .inline-icon {
+            margin-right: 8px;
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+<div class="hero-class">
+    <div class="container">
+        <div class="class-badge">
+            <i class="fas fa-church"></i> Clase No 3 · Confianza en la Escritura
+        </div>
+        <h1>De los Originales a los Manuscritos,<br>de los Manuscritos a las Traducciones</h1>
+        <p class="hero-sub">Un viaje a través de la transmisión fiel de la Palabra de Dios: desde los escribas hebreos y griegos, los tesoros de la crítica textual, hasta las Biblias que hoy tenemos en nuestras manos.</p>
+        <div class="meta-info">
+            <span><i class="fas fa-scroll"></i> Origen Divino + Transmisión Humana</span>
+            <span><i class="fas fa-language"></i> Hebreo · Arameo · Griego</span>
+            <span><i class="fas fa-book-open"></i> Manuscritos y Traducciones</span>
+        </div>
+    </div>
+</div>
+
+<div class="container content-wrapper">
+    <!-- 1. EL ORIGEN DIVINO -->
+    <div class="theme-section">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-dove"></i></div>
+            <h2>El Origen Divino: Inspiración y Fundamento</h2>
+            <div class="section-sub"><i class="fas fa-star-of-life"></i> 2 Timoteo 3:16</div>
+        </div>
+        <div class="section-content">
+            <p><strong>La Biblia no es meramente un libro humano.</strong> Su fuente última es Dios mismo, quien usó a hombres para comunicar su mensaje redentor. Esto establece su carácter único: <strong>inspiración, inerrancia, infalibilidad, suficiencia y singularidad</strong>. La Escritura es “exhalada por Dios” (θεόπνευστος), de modo que lleva la autoridad divina en cada letra. Como Jesús afirmó: <em>“No penséis que he venido para abrogar la ley o los profetas; no he venido para abrogar, sino para cumplir”</em> (Mateo 5:17). Él mismo validó la confiabilidad total de las Escrituras.</p>
+            <div class="highlight-box">
+                <i class="fas fa-lightbulb"></i> <strong>Clave teológica:</strong> La inspiración garantiza que el mensaje original era perfecto; la transmisión humana, con todo su cuidado, explica cómo lo recibimos hoy. Ambos aspectos se complementan en la providencia divina.
+            </div>
+            <p>Dios no envió un libro encuadernado desde el cielo, sino que eligió un proceso real: escribas, idiomas antiguos, copias y siglos. Este proceso revela su soberanía sobre la historia y su deseo de que su Palabra llegara a todas las naciones.</p>
+        </div>
+    </div>
+
+    <!-- 2. LOS IDIOMAS ORIGINALES: ESCRIBAS HEBREO Y GRIEGO -->
+    <div class="theme-section">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-feather-alt"></i></div>
+            <h2>Los Idiomas Originales: La Estación de los Escribas</h2>
+            <div class="section-sub"><i class="fas fa-language"></i> Hebreo · Arameo · Griego koiné</div>
+        </div>
+        <div class="section-content">
+            <p>Dios escogió idiomas específicos para revelarse: el <strong>hebreo</strong> (y algo de arameo) para el Antiguo Testamento, y el <strong>griego koiné</strong> para el Nuevo Testamento. Estos no eran lenguajes abstractos, sino vivos, llenos de matices teológicos. Para preservarlos, los escribas desempeñaron un papel sagrado.</p>
+
+            <div class="scribe-card">
+                <div class="scribe-icon"><i class="fas fa-menorah"></i></div>
+                <div class="scribe-text">
+                    <h3>✡️ El Escriba Hebreo: Soferim, los artistas de la precisión</h3>
+                    <p>Los escribas judíos, conocidos como <strong>Soferim</strong>, trataban el texto con una reverencia extrema. No solo copiaban, sino que contaban cada letra, cada palabra, cada línea. Sabían cuál era la letra del medio de la Torá. Antes de escribir el nombre de Dios (YHWH, el Tetragrámmaton), se detenían, tomaban una pluma nueva y purificaban su corazón. Si cometían un error en una sola letra, destruían toda la página. Gracias a esta meticulosidad, el texto hebreo se transmitió con una fidelidad pasmosa a lo largo de los siglos.</p>
+                    <p><strong>Dato asombroso:</strong> Los Rollos del Mar Muerto (descubiertos en 1947) confirmaron que el texto hebreo se conservó con mínimas variaciones durante más de 1,000 años.</p>
+                </div>
+            </div>
+
+            <div class="scribe-card">
+                <div class="scribe-icon"><i class="fas fa-church"></i></div>
+                <div class="scribe-text">
+                    <h3>✝️ El Escriba Griego: copistas del Nuevo Testamento</h3>
+                    <p>Los primeros copistas del Nuevo Testamento no eran escribas profesionales, sino cristianos comunes que compartían las cartas de Pablo y los evangelios entre las comunidades. Por eso sus copias muestran más variaciones, ¡pero eso es una ventaja! La abundancia de manuscritos (más de 5,800 en griego) nos permite comparar y reconstruir con certeza el texto original. Además, muchos de estos escribas sufrieron persecución para preservar los textos sagrados.</p>
+                    <p><strong>Precisión de Jesús:</strong> En Mateo 5:18, Jesús dice: <em>“ni una jota ni una tilde pasará de la ley”</em>. La <em>jota</em> (ἰῶτα) es la letra más pequeña del alfabeto griego. Con esto, Cristo afirmó que la Escritura es fiel hasta en sus detalles más diminutos.</p>
+                </div>
+            </div>
+            <div class="verse-quote">
+                <i class="fas fa-quote-left"></i> “Porque de cierto os digo que hasta que pasen el cielo y la tierra, ni una jota ni una tilde pasará de la ley, hasta que todo se haya cumplido.” <strong>— Mateo 5:18</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. EL MUSEO DE LA BIBLIA: TESOROS DEL PASADO -->
+    <div class="theme-section">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-landmark"></i></div>
+            <h2>El Museo de la Biblia: Manuscritos que Atestiguan</h2>
+            <div class="section-sub"><i class="fas fa-palette"></i> Evidencia arqueológica</div>
+        </div>
+        <div class="section-content">
+            <p>No poseemos los autógrafos (originales), pero tenemos una colección deslumbrante de manuscritos antiguos que certifican la fidelidad de la transmisión. Entre ellos destacan:</p>
+            <div class="grid-2col">
+                <div class="highlight-box" style="margin:0;">
+                    <i class="fas fa-scroll"></i> <strong>Rollos del Mar Muerto</strong><br>
+                    Descubiertos en Qumrán (1947), contienen copias del AT del siglo II a.C. Mostraron una asombrosa estabilidad textual respecto a manuscritos medievales.
+                </div>
+                <div class="highlight-box" style="margin:0;">
+                    <i class="fas fa-pager"></i> <strong>Papiro P52 (John Rylands)</strong><br>
+                    El fragmento más antiguo del Nuevo Testamento (Juan 18:31-33), datado alrededor del 125 d.C., ¡a solo 30 años del original!
+                </div>
+                <div class="highlight-box" style="margin:0;">
+                    <i class="fas fa-code"></i> <strong>Códice Sinaítico y Vaticano</strong><br>
+                    Manuscritos completos del siglo IV, fundamentales para establecer el texto griego fiable.
+                </div>
+            </div>
+            <p>Estos tesoros, junto a miles de otros manuscritos, constituyen la base sobre la cual los eruditos reconstruyen el texto original. Ningún otro libro de la antigüedad tiene una cantidad tan masiva de copias tan cercanas a los originales.</p>
+        </div>
+    </div>
+
+    <!-- 4. CRÍTICA TEXTUAL: EL TALLER DEL DETECTIVE -->
+    <div class="theme-section">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-search"></i></div>
+            <h2>La Crítica Textual: Reconstruyendo el Texto Original</h2>
+            <div class="section-sub"><i class="fas fa-microscope"></i> Método detectivesco</div>
+        </div>
+        <div class="section-content">
+            <p>La crítica textual no es duda, sino <strong>ciencia de restauración</strong>. Comparando los miles de manuscritos, los especialistas aplican principios de antigüedad, distribución geográfica y genealogía textual para determinar con altísima certeza cuál fue el texto original. El resultado son ediciones críticas como el <em>UBS Greek New Testament</em> y la <em>Biblia Hebraica Stuttgartensia</em>, que sirven de base para todas las traducciones modernas.</p>
+
+            <table class="data-table">
+                <thead><tr><th>Obra Clásica</th><th>Escrita</th><th>Copia más antigua</th><th>Diferencia</th><th>N° de copias</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>La Guerra de las Galias (César)</td><td>50 a.C.</td><td>900 d.C.</td><td>950 años</td><td>~10</td></tr>
+                    <tr><td>Historia de Roma (Livio)</td><td>20 a.C.</td><td>400 d.C.</td><td>420 años</td><td>~30</td></tr>
+                    <tr style="background:#fef2e0;"><td><strong>Nuevo Testamento</strong></td><td><strong>50-95 d.C.</strong></td><td><strong>125 d.C. (P52)</strong></td><td><strong>¡30-50 años!</strong></td><td><strong>5,800+ griegos</strong></td></tr>
+                </tbody>
+            </table>
+            <p>Esta comparación demuestra que el Nuevo Testamento es, con diferencia, el libro antiguo mejor atestiguado. Las diferencias entre copias (variantes) son en su mayoría errores de ortografía o de oído; ninguna doctrina central se ve afectada.</p>
+            <div class="highlight-box">
+                <i class="fas fa-pen-fancy"></i> <strong>Ejemplos de variantes conocidas:</strong> 1 Juan 5:7-8 (Coma Joanina) no aparece en manuscritos griegos antiguos. Marcos 16:9-20 no está en los mejores manuscritos; Juan 7:53–8:11 (la mujer adúltera) es un añadido posterior. Estas notas no afectan la verdad bíblica, sino que muestran el honesto trabajo de los eruditos.
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. LAS TRADUCCIONES: ESPECTRO Y CRITERIO -->
+    <div class="theme-section">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-book"></i></div>
+            <h2>Las Traducciones: La Biblioteca de Versiones</h2>
+            <div class="section-sub"><i class="fas fa-language"></i> Literal ↔ Paráfrasis</div>
+        </div>
+        <div class="section-content">
+            <p>Gracias al trabajo de traducción, hoy podemos leer la Palabra en nuestro idioma. Las traducciones se mueven en un espectro que va desde lo <strong>literal (equivalencia formal)</strong> hasta lo <strong>dinámico (equivalencia funcional)</strong> y la <strong>paráfrasis</strong>.</p>
+
+            <div class="spectrum-line">
+                <span class="spectrum-point">📖 LITERAL<br><small>LBLA, RVR60, RVC</small></span>
+                <span class="spectrum-point">⚖️ DINÁMICA<br><small>NVI, PDT, DHH</small></span>
+                <span class="spectrum-point">✨ PARÁFRASIS<br><small>El Mensaje, TLA</small></span>
+            </div>
+
+            <div class="bible-versions">
+                <div class="version-card"><div class="version-name">RVR60 / LBLA</div><small>Literal, ideal para estudio profundo, palabra por palabra.</small></div>
+                <div class="version-card"><div class="version-name">NVI (Nueva Versión Internacional)</div><small>Equilibrio: fiel al original pero con lenguaje natural.</small></div>
+                <div class="version-card"><div class="version-name">El Mensaje (The Message)</div><small>Paráfrasis fresca, útil para devocional, no para estudio técnico.</small></div>
+            </div>
+
+            <p><strong>¿Cuál es la mejor traducción?</strong> La que leas con fidelidad y entendimiento. Recomendamos tener una literal para estudiar (LBLA o RVR60) y una dinámica para lectura devocional (NVI o PDT). Comparar versiones enriquece la comprensión sin perder la confianza en el texto subyacente.</p>
+            <div class="verse-quote">
+                <i class="fas fa-quote-right"></i> “Así que la fe es por el oír, y el oír, por la palabra de Dios.” <strong>Romanos 10:17</strong> — La traducción permite que la Palabra siga siendo oída por toda nación.
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. EL TESTIMONIO DE LA FIDELIDAD DIVINA -->
+    <div class="theme-section">
+        <div class="section-header">
+            <div class="section-icon"><i class="fas fa-hands-praying"></i></div>
+            <h2>Conclusión: De los Originales a Nuestras Manos</h2>
+            <div class="section-sub"><i class="fas fa-crown"></i> Providencia y confianza</div>
+        </div>
+        <div class="section-content">
+            <p>Desde los escribas hebreos que contaban cada letra, los copistas griegos que difundieron los evangelios con sacrificio, los manuscritos escondidos en cuevas, el trabajo detectivesco de la crítica textual, hasta las Biblias en nuestro idioma: Dios ha preservado su Palabra de manera extraordinaria. <strong>Podemos confiar plenamente en la Biblia que tenemos hoy</strong> porque se basa en el mejor testimonio histórico y la acción soberana de Dios.</p>
+            <p>Como dijo Jesús: <em>“El cielo y la tierra pasarán, pero mis palabras no pasarán”</em> (Mateo 24:35). La confianza en la Escritura no es un salto ciego, sino una certeza fundada en la fidelidad del Dios que inspiró y en la evidencia abrumadora de su transmisión.</p>
+            <div class="highlight-box">
+                <i class="fas fa-torah"></i> <strong>Conclusión práctica:</strong> Valora tu Biblia. Lee con gratitud sabiendo que detrás de cada capítulo hay siglos de reverencia, sacrificio y la mano de Dios. Cada vez que abres las Escrituras, participas de la cadena ininterrumpida de fieles que han atesorado la Palabra de vida.
+            </div>
+        </div>
+    </div>
+
+    <!-- Cierre Inspirador -->
+    <div class="conclusion-box">
+        <h3><i class="fas fa-feather-alt"></i> Eres parte de la historia</h3>
+        <p style="font-size:1.1rem; margin-bottom:0;">Dios usó a escribas, papiros, idiomas y siglos para entregarte su Palabra. Así como ellos fueron fieles en transmitir, tú eres llamado a vivirla y compartirla. Tu Biblia es un tesoro de certeza y esperanza.</p>
+        <p style="margin-top: 20px;"><i class="fas fa-bible"></i> “La palabra de nuestro Dios permanece para siempre” — Isaías 40:8</p>
+    </div>
+
+    <footer>
+        <p><i class="fas fa-church"></i> Clase No 3 · Fundamento para la confianza en las Escrituras · Basado en evidencia histórica, textual y teológica</p>
+        <p style="margin-top: 10px;">Soli Deo Gloria — La Biblia, Palabra fielmente preservada</p>
+    </footer>
+</div>
+</body>
+</html>

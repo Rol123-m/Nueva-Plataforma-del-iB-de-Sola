@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Géneros Literarios de la Biblia | Guía de Interpretación</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-deep: #1e3a5f;
+            --primary: #2c5282;
+            --primary-light: #4a6fa5;
+            --accent-gold: #d4a373;
+            --accent-terra: #bc6c25;
+            --bg-warm: #fefaf0;
+            --bg-card: #ffffff;
+            --text-dark: #2d2a24;
+            --text-soft: #5a5548;
+            --border-light: #e9e2d4;
+            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+            --radius-lg: 28px;
+            --radius-md: 18px;
+            --radius-sm: 12px;
+        }
+
+        body {
+            background: linear-gradient(135deg, #fef7e8 0%, #faf1e2 100%);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.5;
+            min-height: 100vh;
+        }
+
+        /* Hero */
+        .hero-genre {
+            background: linear-gradient(115deg, #1e3a5f 0%, #2c5282 50%, #2b6e8f 100%);
+            color: white;
+            padding: 60px 0 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-genre::before {
+            content: "📖";
+            position: absolute;
+            bottom: -30px;
+            right: -20px;
+            font-size: 180px;
+            opacity: 0.08;
+            pointer-events: none;
+            transform: rotate(-10deg);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 240, 0.2);
+            backdrop-filter: blur(4px);
+            padding: 8px 22px;
+            border-radius: 60px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 28px;
+            border: 1px solid rgba(255, 245, 200, 0.4);
+        }
+
+        .hero-genre h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 18px;
+            max-width: 800px;
+        }
+
+        .hero-sub {
+            font-size: 1.2rem;
+            opacity: 0.92;
+            max-width: 680px;
+            margin-bottom: 25px;
+        }
+
+        .meta-note {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .meta-note span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 0, 0, 0.25);
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+        }
+
+        /* Introducción */
+        .intro-section {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 32px 35px;
+            margin: 40px 0;
+            box-shadow: var(--shadow-sm);
+            border-left: 6px solid var(--accent-gold);
+        }
+
+        .intro-section p {
+            font-size: 1.05rem;
+            color: var(--text-soft);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .intro-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Tabla responsiva estilo moderno */
+        .genre-table-wrapper {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            overflow-x: auto;
+            margin: 30px 0 50px;
+            border: 1px solid var(--border-light);
+        }
+
+        .genre-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            min-width: 780px;
+        }
+
+        .genre-table th {
+            background: var(--primary-deep);
+            color: white;
+            padding: 20px 18px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-align: left;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .genre-table td {
+            padding: 18px 18px;
+            border-bottom: 1px solid #f0e7db;
+            vertical-align: top;
+            background-color: white;
+            transition: background 0.2s;
+        }
+
+        .genre-table tr:hover td {
+            background-color: #fefaf2;
+        }
+
+        .genre-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .genre-category {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1rem;
+            border-left: 3px solid var(--accent-gold);
+            padding-left: 12px;
+        }
+
+        .testamento-badge {
+            display: inline-block;
+            background: #e9f0f5;
+            padding: 4px 12px;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--primary-deep);
+            margin-bottom: 8px;
+        }
+
+        .book-list {
+            font-size: 0.85rem;
+            color: #7b6e5c;
+            margin-top: 6px;
+            line-height: 1.4;
+        }
+
+        .tip-icon {
+            color: var(--accent-terra);
+            margin-right: 6px;
+        }
+
+        .how-to-read {
+            background: #fef6e8;
+            border-radius: var(--radius-sm);
+            padding: 12px 14px;
+            margin-top: 12px;
+            font-size: 0.85rem;
+            border-left: 3px solid var(--accent-gold);
+        }
+
+        @media (max-width: 850px) {
+            .hero-genre h1 {
+                font-size: 2.2rem;
+            }
+            .intro-section {
+                padding: 24px;
+            }
+            .genre-table th, .genre-table td {
+                padding: 14px 12px;
+            }
+        }
+
+        /* Tarjetas extras de consejos */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 50px 0 40px;
+        }
+
+        .tip-card {
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 25px;
+            box-shadow: var(--shadow-sm);
+            border-top: 5px solid var(--accent-gold);
+            transition: transform 0.2s;
+        }
+
+        .tip-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tip-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-deep);
+        }
+
+        .tip-card p {
+            color: var(--text-soft);
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 30px;
+            border-top: 1px solid #e6dacf;
+            color: #7c6e5d;
+            font-size: 0.85rem;
+        }
+
+        .verse-mini {
+            font-style: italic;
+            background: #faf1e4;
+            padding: 12px 20px;
+            border-radius: 60px;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        i.fa, i.far, i.fas {
+            margin-right: 6px;
+        }
+    </style>
+</head>
+<body>
+<div class="hero-genre">
+    <div class="container">
+        <div class="hero-badge"><i class="fas fa-scroll"></i> Hermenéutica · Interpretación Bíblica</div>
+        <h1>Géneros Literarios de la Biblia<br>Claves para leer correctamente</h1>
+        <p class="hero-sub">Cada libro de la Escritura fue escrito en un estilo único: narrativa, poesía, profecía, epístola… Comprender el género es esencial para interpretar fielmente y aplicar la Palabra con sabiduría.</p>
+        <div class="meta-note">
+            <span><i class="fas fa-torah"></i> Antiguo Testamento</span>
+            <span><i class="fas fa-church"></i> Nuevo Testamento</span>
+            <span><i class="fas fa-lightbulb"></i> Cómo leer cada género</span>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="intro-section">
+        <p><i class="fas fa-book-open" style="color: #bc6c25; font-size: 1.3rem;"></i> <strong>¿Por qué es importante identificar el género literario?</strong> La Biblia no es un solo libro con un solo estilo. Dios usó diversos géneros —historia, ley, poesía, sabiduría, profecía, evangelio, epístola, apocalipsis— para comunicar su mensaje. Leer un salmo como si fuera una epístola, o una profecía como si fuera crónica histórica, puede llevar a malentendidos. Conocer el género nos ayuda a interpretar correctamente la intención del autor y aplicar su mensaje de forma fiel.</p>
+    </div>
+
+    <!-- Tabla responsiva principal -->
+    <div class="genre-table-wrapper">
+        <table class="genre-table">
+            <thead>
+                <tr><th>Género Literario</th><th>Descripción y Propósito</th><th>Libros / Dónde se encuentra</th><th>¿Cómo leerlo correctamente?</th></tr>
+            </thead>
+            <tbody>
+                <!-- ========== ANTIGUO TESTAMENTO ========== -->
+                <tr style="background:#faf7f0;"><td colspan="4" style="background: #e9dfd1; font-weight: 800; color: #2d3e40;"><i class="fas fa-star-of-david"></i> ANTIGUO TESTAMENTO</td></tr>
+                
+                <!-- Ley (Torá) -->
+                <tr><td class="genre-category">⚖️ Ley / Torá</td>
+                <td>Instrucciones divinas, mandamientos, códigos civiles, ceremoniales y morales que establecen la alianza con Israel. Incluye narrativa fundacional.</td>
+                <td><span class="testamento-badge">Pentateuco</span> Génesis, Éxodo, Levítico, Números, Deuteronomio</td>
+                <td><div class="how-to-read"><i class="fas fa-gavel tip-icon"></i> <strong>Clave:</strong> Distingue entre leyes ceremoniales (templo, sacrificios), civiles (sociedad israelita) y morales (ética universal). Las leyes morales reflejan el carácter de Dios y son aplicadas en el NT; las ceremoniales apuntan a Cristo.</div></td></tr>
+                
+                <!-- Narrativa histórica -->
+                <tr><td class="genre-category">📜 Narrativa Histórica</td>
+                <td>Relatos de la historia de Israel: desde la conquista hasta el exilio. Muestra cómo Dios actúa en la historia, su fidelidad, juicio y redención.</td>
+                <td><span class="testamento-badge">Históricos</span> Josué, Jueces, Rut, 1-2 Samuel, 1-2 Reyes, 1-2 Crónicas, Esdras, Nehemías, Ester, (partes de Éxodo/Números)</td>
+                <td><div class="how-to-read"><i class="fas fa-clock tip-icon"></i> <strong>Clave:</strong> Lee como historia teológica: no solo "qué pasó", sino qué revela sobre Dios. No todas las acciones de los personajes son aprobadas; busca el propósito didáctico.</div></td></tr>
+                
+                <!-- Poesía y Sabiduría -->
+                <tr><td class="genre-category">📖 Poesía / Sabiduría</td>
+                <td>Poemas, proverbios, canciones, reflexiones sobre el sufrimiento, la vida y el temor de Dios. Usa paralelismo, metáforas y lenguaje emocional.</td>
+                <td><span class="testamento-badge">Poéticos</span> Job, Salmos, Proverbios, Eclesiastés, Cantares</td>
+                <td><div class="how-to-read"><i class="fas fa-feather-alt tip-icon"></i> <strong>Clave:</strong> Lee con el corazón y la mente. La poesía hebrea usa paralelismo (ideas repetidas o contrastadas). Los proverbios son principios generales, no promesas absolutas; los salmos expresan emociones humanas auténticas.</div></td></tr>
+                
+                <!-- Profecía (AT) -->
+                <tr><td class="genre-category">🔥 Profecía (AT)</td>
+                <td>Mensajes de juicio, consuelo, llamado al arrepentimiento y anuncio mesiánico. Los profetas hablan en nombre de Dios con lenguaje oracular y simbólico.</td>
+                <td><span class="testamento-badge">Profetas Mayores/Menores</span> Isaías, Jeremías, Ezequiel, Daniel, Oseas, Joel, Amós, Abdías, Jonás, Miqueas, Nahúm, Habacuc, Sofonías, Hageo, Zacarías, Malaquías</td>
+                <td><div class="how-to-read"><i class="fas fa-dove tip-icon"></i> <strong>Clave:</strong> Contexto histórico inmediato + cumplimiento tipológico en Cristo. La profecía suele tener un cumplimiento cercano (en Israel) y otro lejano (mesiánico). No se interpreta de forma aislada; hay que discernir lenguaje figurado.</div></td></tr>
+                
+                <!-- Apocalíptico (AT) -->
+                <tr><td class="genre-category">🌌 Apocalíptico (AT)</td>
+                <td>Visiones simbólicas sobre el juicio final, el reino de Dios y la consumación. Usa imágenes de bestias, números, cielos abiertos.</td>
+                <td><span class="testamento-badge">Daniel, Zacarías, Ezequiel (partes)</span> Daniel 7-12, Zacarías 9-14, Ezequiel 38-39</td>
+                <td><div class="how-to-read"><i class="fas fa-sun tip-icon"></i> <strong>Clave:</strong> Interpretar con sobriedad: el simbolismo representa realidades históricas y escatológicas. Evita lecturas especulativas; concéntrate en el triunfo final de Dios.</div></td></tr>
+
+                <!-- ========== NUEVO TESTAMENTO ========== -->
+                <tr style="background:#faf7f0;"><td colspan="4" style="background: #e9dfd1; font-weight: 800; color: #2d3e40;"><i class="fas fa-cross"></i> NUEVO TESTAMENTO</td></tr>
+                
+                <!-- Evangelios -->
+                <tr><td class="genre-category">✝️ Evangelios</td>
+                <td>Género biográfico-teológico único: narran la vida, muerte y resurrección de Jesús, destacando su identidad como Mesías e Hijo de Dios. No son biografías modernas, sino testimonios de fe.</td>
+                <td><span class="testamento-badge">Evangelios</span> Mateo, Marcos, Lucas, Juan</td>
+                <td><div class="how-to-read"><i class="fas fa-hand-peace tip-icon"></i> <strong>Clave:</strong> Lee cada evangelio como un retrato inspirado. Observa las diferencias: Mateo enfatiza el cumplimiento profético, Marcos la acción, Lucas el alcance universal, Juan la divinidad de Cristo. Interpreta las parábolas en su contexto.</div></td></tr>
+                
+                <!-- Hechos (Narrativa Histórica NT) -->
+                <tr><td class="genre-category">⛵ Hechos / Narrativa Apostólica</td>
+                <td>Relato histórico de la expansión de la iglesia primitiva, la obra del Espíritu Santo y el testimonio apostólico. Conecta los evangelios con las epístolas.</td>
+                <td><span class="testamento-badge">Histórico</span> Hechos de los Apóstoles</td>
+                <td><div class="how-to-read"><i class="fas fa-church tip-icon"></i> <strong>Clave:</strong> Distingue entre lo <em>descriptivo</em> (lo que sucedió) y lo <em>prescriptivo</em> (modelo normativo). No todo evento (ej. lenguas, veneno) es necesariamente una orden para todos los tiempos; busca principios teológicos.</div></td></tr>
+                
+                <!-- Epístolas (Cartas) -->
+                <tr><td class="genre-category">📬 Epístolas / Cartas</td>
+                <td>Cartas doctrinales y prácticas escritas por apóstoles a iglesias o personas. Abordan teología, ética, corrección de errores y aliento en la fe.</td>
+                <td><span class="testamento-badge">Paulinas y generales</span> Romanas, 1-2 Corintios, Gálatas, Efesios, Filipenses, Colosenses, 1-2 Tesalonicenses, 1-2 Timoteo, Tito, Filemón; Hebreos, Santiago, 1-2 Pedro, 1-3 Juan, Judas</td>
+                <td><div class="how-to-read"><i class="fas fa-envelope-open-text tip-icon"></i> <strong>Clave:</strong> Lee como una carta: identifica autor, destinatarios, motivo. Un pasaje debe interpretarse a la luz de la epístola completa y el contexto histórico. Aplica los principios eternos considerando las diferencias culturales.</div></td></tr>
+                
+                <!-- Apocalipsis (NT) -->
+                <tr><td class="genre-category">🌠 Apocalíptico / Profecía (NT)</td>
+                <td>Revelación de Jesucristo mediante visiones simbólicas, mensajes a las iglesias, juicios finales, la segunda venida y la nueva creación. Escrito en medio de la persecución.</td>
+                <td><span class="testamento-badge">Apocalipsis</span> (Revelación)</td>
+                <td><div class="how-to-read"><i class="fas fa-eye tip-icon"></i> <strong>Clave:</strong> Evita el sensacionalismo. Es un libro de esperanza: muestra que Cristo vence. Interpreta el simbolismo en su contexto del AT y judío. Concéntrate en el mensaje central: Jesús reina, la justicia triunfa.</div></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Consejos de interpretación en cards -->
+    <div class="tips-grid">
+        <div class="tip-card">
+            <h3><i class="fas fa-balance-scale"></i> Principio del contexto</h3>
+            <p>Nunca leas un versículo aislado. Un texto sin contexto es un pretexto. Pregunta: ¿quién escribió?, ¿a quién?, ¿cuál era la situación histórica? y ¿qué dice antes y después?</p>
+        </div>
+        <div class="tip-card">
+            <h3><i class="fas fa-comment-dots"></i> Género determina interpretación</h3>
+            <p>Un proverbio no es una promesa incondicional; un salmo de lamento no es una doctrina sistemática; una parábola no es una crónica histórica. Lee según las reglas del género.</p>
+        </div>
+        <div class="tip-card">
+            <h3><i class="fas fa-christianity"></i> Cristo como centro</h3>
+            <p>Todo el AT apunta a Cristo (Lucas 24:27). Interpreta los géneros del AT a la luz de la obra redentora de Jesús, sin forzar alegorías innecesarias.</p>
+        </div>
+        <div class="tip-card">
+            <h3><i class="fas fa-lightbulb"></i> Lenguaje figurado vs. literal</h3>
+            <p>La Biblia usa metáforas, hipérboles y símbolos. Reconoce cuándo el lenguaje es poético o simbólico (ej. “montes saltaron como carneros” Salmo 114) para no confundir con hechos literales.</p>
+        </div>
+    </div>
+
+    <!-- Tabla adicional de ejemplos de lectura errónea vs correcta -->
+    <div style="background: white; border-radius: var(--radius-lg); padding: 28px 30px; margin: 20px 0 40px; box-shadow: var(--shadow-sm);">
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; margin-bottom: 20px; color: var(--primary-deep);"><i class="fas fa-clipboard-list"></i> Ejemplos de aplicación: ¿Error común vs lectura correcta?</h2>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+            <div style="border-left: 4px solid #d4a373; padding-left: 20px;">
+                <p><strong>📖 Mateo 27:5 – “Judas fue y se ahorcó”</strong><br>❌ Leer como si la Biblia recomendara el suicidio. <br>✅ Género: narrativa histórica. Describe un hecho trágico, no una aprobación. La Escritura muestra consecuencias del pecado.</p>
+            </div>
+            <div style="border-left: 4px solid #d4a373; padding-left: 20px;">
+                <p><strong>📖 Proverbios 22:6 – “Instruye al niño en su camino, aun cuando fuere viejo no se apartará de él”</strong><br>❌ Leer como una promesa mecánica de que ningún hijo criado cristiano se perderá. <br>✅ Género: sabiduría. Es un principio general sobre la influencia de la educación, no una garantía absoluta. La persona tiene libre albedrío.</p>
+            </div>
+            <div style="border-left: 4px solid #d4a373; padding-left: 20px;">
+                <p><strong>📖 Apocalipsis 20 – “Mil años”</strong><br>❌ Interpretar cada número sin considerar simbolismo apocalíptico. <br>✅ Género: apocalíptico. El número 1000 simboliza plenitud y totalidad. La interpretación requiere considerar el contexto literario judío y la unidad del libro.</p>
+            </div>
+        </div>
+        <div class="verse-mini" style="background:#f5ede2;">
+            <i class="fas fa-quote-left"></i> "Procura con diligencia presentarte a Dios aprobado, como obrero que no tiene de qué avergonzarse, que traza bien la palabra de verdad." <strong>2 Timoteo 2:15</strong>
+        </div>
+    </div>
+
+    <footer>
+        <p><i class="fas fa-scroll"></i> Conocer los géneros literarios es amar la verdad. Cada estilo revela la sabiduría de Dios para que leamos con entendimiento y corazón transformado.</p>
+        <p style="margin-top: 10px;">Guía basada en principios hermenéuticos · Antiguo y Nuevo Testamento · Iglesia y Escuela Bíblica</p>
+    </footer>
+</div>
+</body>
+</html>
