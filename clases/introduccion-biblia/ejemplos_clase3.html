@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Clase Especial: Creación, Ley, Cananeos, Proverbios y Salmos | Instituto Bíblico</title>
+  <style>
+    /* ============================================
+   ESTILOS CLAROS Y MODERNOS - ALTO CONTRASTE
+   Paleta: fondo claro, texto oscuro, acentos vibrantes
+   Diseño cómodo para lectura prolongada
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #F4F7FC;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    color: #1A2C3E;
+    line-height: 1.55;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ===== HEADER CLARO ===== */
+.hero {
+    background: linear-gradient(135deg, #FFFFFF, #E8F0FE);
+    padding: 60px 0 48px;
+    border-bottom: 3px solid #14B8A6;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #0F2B3D;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #2C4C6E;
+    max-width: 750px;
+}
+
+.meta {
+    display: flex;
+    gap: 16px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+}
+
+.meta span {
+    background: #E2F0FA;
+    padding: 6px 18px;
+    border-radius: 40px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #0F5C6B;
+    border: 1px solid #B9DFE8;
+}
+
+/* ===== TARJETAS PRINCIPALES ===== */
+.section-card {
+    background: #FFFFFF;
+    border-radius: 28px;
+    padding: 40px;
+    margin: 48px 0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.02);
+    border: 1px solid #DCE7F0;
+    transition: box-shadow 0.2s ease;
+}
+
+.section-card:hover {
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.06);
+}
+
+.section-title {
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-left: 5px solid #14B8A6;
+    padding-left: 20px;
+    color: #1A3A4F;
+}
+
+.section-title i {
+    font-size: 1.8rem;
+}
+
+/* ===== GRID Y CAJAS INFORMATIVAS ===== */
+.grid-2cols {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 28px;
+    margin: 28px 0;
+}
+
+.info-box {
+    background: #F9FCFE;
+    padding: 24px;
+    border-radius: 24px;
+    border-left: 4px solid #14B8A6;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    transition: all 0.2s;
+}
+
+.info-box h3 {
+    font-size: 1.35rem;
+    margin-bottom: 16px;
+    color: #1C6B78;
+    font-weight: 600;
+}
+
+/* ===== VERSÍCULOS DESTACADOS ===== */
+.versiculo {
+    background: #F0F6FA;
+    padding: 20px 24px;
+    border-radius: 20px;
+    margin: 24px 0;
+    border-left: 4px solid #0F7B6E;
+    font-style: normal;
+}
+
+.versiculo p {
+    font-size: 1rem;
+    color: #1A3A4F;
+    line-height: 1.6;
+}
+
+.versiculo cite {
+    display: block;
+    text-align: right;
+    margin-top: 12px;
+    color: #0F7B6E;
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* ===== BADGES Y ETIQUETAS ===== */
+.badge {
+    background: #DCFCE7;
+    color: #15803D;
+    padding: 4px 14px;
+    border-radius: 40px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 14px;
+}
+
+/* ===== CAJA DE ADVERTENCIA / DESTACADO ===== */
+.warning-box {
+    background: #FFF7E5;
+    border-left: 4px solid #F59E0B;
+    padding: 20px 24px;
+    border-radius: 20px;
+    margin: 28px 0;
+    color: #7B5E2C;
+    font-weight: 500;
+}
+
+.highlight {
+    color: #C2410C;
+    font-weight: 700;
+    background: #FFF1EB;
+    padding: 0 6px;
+    border-radius: 8px;
+}
+
+/* ===== LISTAS CON ÍCONOS ===== */
+.principle-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.principle-list li {
+    margin-bottom: 14px;
+    padding-left: 28px;
+    position: relative;
+    line-height: 1.5;
+}
+
+.principle-list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #14B8A6;
+    font-weight: bold;
+}
+
+/* ===== NAVEGACIÓN ===== */
+.navegacion {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 48px;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.btn {
+    background: #14B8A6;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.btn:hover {
+    background: #0D9488;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(20, 184, 166, 0.2);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 32px 0;
+    border-top: 1px solid #DCE7F0;
+    margin-top: 32px;
+    color: #5B7A9A;
+    font-size: 0.85rem;
+    background: #FFFFFF;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .section-card {
+        padding: 24px;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .grid-2cols {
+        grid-template-columns: 1fr;
+    }
+    
+    .navegacion {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .btn {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+    
+    .info-box h3 {
+        font-size: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 1.3rem;
+    }
+}
+
+/* ===== UTILIDADES ADICIONALES ===== */
+hr {
+    border: none;
+    border-top: 2px dotted #D0E0EB;
+    margin: 24px 0;
+}
+
+.text-small {
+    font-size: 0.85rem;
+    color: #5B7A9A;
+}
+  </style>
+</head>
+<body>
+<div class="hero">
+    <div class="container">
+        <div class="meta">
+            <span>📖 Clase Magistral</span>
+            <span>⚡ Perspectiva Bautista Reformada</span>
+            <span>🎓 Prof. Lic. Rolando Y. Desdín</span>
+        </div>
+        <h1>Días literales · Ley ceremonial vs moral · Cananeos · Proverbios y Salmos imprecatorios</h1>
+        <p>Una defensa exegética de la creación en días de 24 horas, la abolición de la ley ceremonial, el juicio justo sobre Canaán y la correcta interpretación de la literatura sapiencial e imprecatoria.</p>
+    </div>
+</div>
+
+<main class="container">
+    <!-- 1. DIAS DE LA CREACIÓN: CORTOS (LITERALES) -->
+    <div class="section-card">
+        <div class="section-title">
+            <i>🌅</i> 
+            <span>Días de Génesis 1: ¿cortos (24h) o largos (eras)? Defensa de los días literales</span>
+        </div>
+        <p>La frase <strong>“y fue la tarde y la mañana, día [uno, segundo, tercero…]”</strong> (Génesis 1:5,8,13,19,23,31) es el patrón más claro de un día terrestre normal. En hebreo, <em>yom</em> acompañado de número ordinal y la delimitación “tarde + mañana” siempre indica un día solar de 24 horas en el resto del Antiguo Testamento (Éxodo 20:11).</p>
+        <div class="grid-2cols">
+            <div class="info-box">
+                <h3>📌 Argumento gramático-histórico</h3>
+                <p>Si Moisés hubiera querido decir “eras geológicas” (millones de años), disponía de términos como <em>olam</em> o <em>dor</em>. En cambio, usa <em>yom</em> + “tarde y mañana” + número. Además, el cuarto día crea el sol, la luna y las estrellas <strong>para señar las estaciones, días y años</strong> (Génesis 1:14). No tendría sentido crear el sol después de “largas eras” sin sol.</p>
+                <div class="versiculo">
+                    <p>“Porque en seis días hizo Jehová los cielos y la tierra, el mar, y todas las cosas que en ellos hay, y reposó en el séptimo día”</p>
+                    <cite>Éxodo 20:11</cite>
+                </div>
+                <p><span class="badge">REFORMADO</span> La posición de días largos (teoría del día-era) introduce muerte antes del pecado de Adán (Romanos 5:12) y contradice el mandato de reposo sabático basado en el patrón de 6+1 literales.</p>
+            </div>
+            <div class="info-box">
+                <h3>⚡ Consecuencias teológicas</h3>
+                <p>Si los días son largos (miles o millones de años), entonces la muerte y el caos existirían antes de la caída, afectando la doctrina del pecado original. Jesús mismo ratificó la historicidad literal: <em>“desde el principio de la creación, varón y hembra los hizo”</em> (Marcos 10:6). <strong>Defendemos días de 24 horas</strong> porque es la lectura natural del texto, coherente con el carácter veraz de la Escritura y la teología del pacto de obras.</p>
+                <div class="versiculo">
+                    <p>“La tarde y la mañana fueron el día sexto” (Génesis 1:31). La repetición excluye lapsos indefinidos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. LEY CEREMONIAL vs LEY MORAL -->
+    <div class="section-card">
+        <div class="section-title">
+            <i>📜</i>
+            <span>Ley ceremonial vs Ley moral: ¿cuál debemos cumplir hoy?</span>
+        </div>
+        <p>La teología reformada distingue tres usos de la ley. La <strong>ley moral</strong> (Decálogo + principios éticos eternos) es perpetua, refleja el carácter de Dios y sigue vigente como regla de vida para el creyente (Romanos 3:31; 7:12). La <strong>ley ceremonial</strong> (sacrificios, pureza ritual, fiestas, dieta, sacerdocio levítico) fue dada como sombra de las realidades venideras en Cristo (Hebreos 10:1).</p>
+        <div class="grid-2cols">
+            <div class="info-box">
+                <h3>🔹 Ley Ceremonial: cumplida y abolida</h3>
+                <p>Colosenses 2:16-17 declara: <em>“Por tanto, nadie os juzgue en comida o en bebida, o en cuanto a días de fiesta, luna nueva o días de reposo, todo lo cual es sombra de lo que ha de venir; pero el cuerpo es de Cristo”</em>. Los sacrificios de animales apuntaban al Cordero de Dios; las distinciones alimenticias enseñaban separación, pero Cristo declaró limpios todos los alimentos (Marcos 7:19). Ya no estamos bajo el tutor ceremonial (Gálatas 3:24-25).</p>
+                <div class="versiculo">
+                    <p>“Porque la ley, teniendo la sombra de los bienes venideros, no la imagen misma de las cosas, nunca puede… santificar al que se acerca”</p>
+                    <cite>Hebreos 10:1</cite>
+                </div>
+            </div>
+            <div class="info-box">
+                <h3>⚖️ Ley Moral: norma de gratitud</h3>
+                <p>Los Diez Mandamientos (Éxodo 20) resumen la ley moral. Jesús los confirma y profundiza (Mateo 5:17-20). No guardamos la ley para ser salvos, sino porque somos salvos: “La fe obra por el amor” (Gálatas 5:6). La ley moral es espejo que nos muestra pecado y guía al creyente en santificación. <strong>La ley ceremonial fue cancelada en la cruz</strong>; la ley moral permanece como revelación de la voluntad de Dios para todo ser humano.</p>
+                <div class="versiculo">
+                    <p>“Si me amáis, guardad mis mandamientos” (Juan 14:15). No se trata de ceremonias levíticas, sino de justicia y amor.</p>
+                </div>
+            </div>
+        </div>
+        <div class="warning-box">
+            <strong>✅ Conclusión práctica:</strong> No guardamos días santos ceremoniales, ni ofrecemos sacrificios animales, ni evitamos alimentos por ley ceremonial. Pero sí adoramos sólo a Dios, honramos a padres, no mentimos, no adulteramos, no codiciamos. Eso es ley moral vigente.
+        </div>
+    </div>
+
+    <!-- 3. ANIQUILACIÓN DE CANAAN: JUSTICIA DIVINA + PRÁCTICAS PERVERSAS -->
+    <div class="section-card">
+        <div class="section-title">
+            <i>⚔️</i>
+            <span>La conquista de Canaán: juicio santo y actos aberrantes (canibalismo, sacrificios humanos)</span>
+        </div>
+        <p>Dios ordenó el <em>herem</em> (destrucción total) sobre los cananeos (Deuteronomio 7:1-5; 20:16-18). No fue una limpieza étnica injusta, sino un <strong>juicio divino contra una civilización extremadamente corrupta</strong> que llevaba siglos de paciencia divina (Génesis 15:16: “la iniquidad del amorreo aún no ha llegado a su colmo”).</p>
+        <div class="info-box">
+            <h3>🩸 Prácticas perversas de los cananeos (evidencia histórica y bíblica)</h3>
+            <ul class="principle-list">
+                <li><strong>Sacrificio de niños:</strong> Quemaban a sus hijos en honor a Moloc y Quemos (Levítico 18:21; 2 Reyes 16:3). Arqueología en Cartago y Tofet confirma miles de restos infantiles.</li>
+                <li><strong>Canibalismo ritual:</strong> En períodos de crisis, inscripciones ugaríticas y testimonios antiguos (Eusebio) describen que adoradores de Baal llegaban a devorar partes de cuerpos humanos en orgías religiosas.</li>
+                <li><strong>Culto de prostitución sagrada y abominaciones sexuales:</strong> Bestialidad, incesto, homosexualidad ritual (Levítico 18:22-27). La tierra misma “vomitó” a sus habitantes (Levítico 18:28).</li>
+                <li><strong>Adivinación, hechicería y necromancia:</strong> Practicaban magia sanguinaria y consultaban a muertos (Deuteronomio 18:9-12).</li>
+            </ul>
+            <div class="versiculo">
+                <p>“No solo por justicia propia, sino porque estas naciones cometían todas estas abominaciones, y Jehová las castigó” (Deuteronomio 9:4-5).</p>
+            </div>
+        </div>
+        <div class="grid-2cols">
+            <div class="info-box">
+                <h3>📖 ¿Dios cruel? No: soberano y justo</h3>
+                <p>Dios es el dador de la vida y tiene derecho a juzgar la maldad extrema. La aniquilación de los cananeos evitó que la infección espiritual destruyera a Israel y que el plan redentor (Cristo en la simiente de Abraham) fuera contaminado. Además, cualquier cananeo que se arrepintiera (como Rahab y los gabaonitas) era perdonado y acogido. Dios no se complace en la muerte del impío (Ezequiel 33:11).</p>
+            </div>
+            <div class="info-box">
+                <h3>⚡ Lección para hoy</h3>
+                <p>El juicio sobre Canaán tipifica el juicio final sobre todo pecado no cubierto por Cristo. Nos muestra la santidad de Dios y la gravedad del pecado. También es una advertencia para la iglesia: no tolerar prácticas abominables que destruyen la comunión con Dios.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. PROVERBIOS SON PRINCIPIOS GENERALES (NO PROMESAS ABSOLUTAS) + EJEMPLO -->
+    <div class="section-card">
+        <div class="section-title">
+            <i>📚</i>
+            <span>Proverbios: principios generales de sabiduría, no promesas mecánicas</span>
+        </div>
+        <p>El género sapiencial hebreo presenta verdades prácticas para una vida que teme a Dios, pero <strong>no son garantías infalibles</strong> en cada caso individual porque vivimos en un mundo caído donde a veces los justos sufren y los impíos prosperan (Job, Eclesiastés).</p>
+        <div class="info-box">
+            <h3>🔍 Ejemplo clave: Proverbios 22:6</h3>
+            <div class="versiculo">
+                <p>“Instruye al niño en su camino, y aun cuando fuere viejo no se apartará de él”</p>
+                <cite>Proverbios 22:6</cite>
+            </div>
+            <p><span class="highlight">No es una promesa de salvación automática para cada hijo de creyente.</span> Es un <strong>principio general</strong>: la educación piadosa inclina estadísticamente a la perseverancia, pero hay hijos que se apartan (como Absalón, o el hijo pródigo antes de volver). El libro de Proverbios mismo reconoce excepciones: “El justo cae siete veces, y vuelve a levantarse” (24:16). Si fuera promesa absoluta, ningún hijo de cristiano se perdería, y vemos que no es así. Por tanto, lo interpretamos como una directriz sabia, no un cheque en blanco.</p>
+            <p><strong>Aplicación:</strong> Debemos instruir fielmente, pero la respuesta final depende de la gracia de Dios y la elección personal. No usamos este versículo para culpar a padres cuyos hijos se rebelan.</p>
+        </div>
+        <div class="info-box">
+            <h3>⚙️ Naturaleza de los proverbios</h3>
+            <p>Son refranes inspirados que describen cómo suele funcionar el mundo bajo la providencia general de Dios. Ofrecen sabiduría práctica para prosperar espiritualmente, pero no anulan la realidad del sufrimiento injusto ni el misterio de la soberanía divina. Debemos leerlos a la luz del resto de la Escritura (Job, Salmos 73, Eclesiastés 7:15).</p>
+        </div>
+    </div>
+
+    <!-- 5. SALMOS IMPRECATORIOS: SIGNIFICADO HOY -->
+    <div class="section-card">
+        <div class="section-title">
+            <i>🎯</i>
+            <span>Salmos imprecatorios (Salmo 69, 109, 137): ¿puede un cristiano orarlos hoy?</span>
+        </div>
+        <p>Los salmos imprecatorios son súplicas donde el salmista pide juicio divino contra los enemigos malvados. Ejemplos: “Sean sus hijos huérfanos, y su mujer viuda” (Salmo 109:9); “Dichoso el que tome tus pequeños y los estrelle contra la peña” (Salmo 137:9).</p>
+        <div class="grid-2cols">
+            <div class="info-box">
+                <h3>📌 Contexto histórico y teológico</h3>
+                <p>Estos salmos fueron inspirados bajo la <strong>antigua alianza teocrática</strong>, donde Israel era instrumento de juicio divino. El salmista no actúa por venganza personal, sino por celo por la justicia de Dios y por la opresión violenta contra el pueblo del pacto (Babilonia destruyó Jerusalén y mató niños). Apelan al Dios juez justo que juzgará al mal. No son rencillas privadas, sino clamor por el triunfo de la justicia divina.</p>
+            </div>
+            <div class="info-box">
+                <h3>✝️ Aplicación para el creyente del Nuevo Pacto</h3>
+                <p>Jesús nos enseña a amar a los enemigos y orar por los que nos persiguen (Mateo 5:44). Sin embargo, podemos orar los imprecatorios <strong>en sentido espiritual</strong>: pidiendo que Dios derrote el mal, que haga justicia sobre el pecado y que venga su reino. Pablo cita el Salmo 69 en Romanos 11:9-10 para hablar del juicio sobre los incrédulos. No pedimos muerte literal de nuestros enemigos personales, pero sí anhelamos el día en que Cristo someta a todos sus enemigos (1 Corintios 15:25). También nos ayudan a expresar honestamente el dolor ante la injusticia extrema, dejando la venganza en manos de Dios (Romanos 12:19).</p>
+            </div>
+        </div>
+        <div class="warning-box">
+            <strong>✅ Principio hermenéutico bautista reformado:</strong> Leemos los imprecatorios a la luz de la cruz y el juicio final. La iglesia no toma la espada física, sino la espada del Espíritu. No oramos por la destrucción de personas, sino contra las obras del diablo y por la justicia perfecta que Cristo ejecutará en su segunda venida. Podemos usarlos en oración contra la opresión, el aborto, el tráfico de personas, etc., pidiendo a Dios que intervenga con justicia.
+        </div>
+        <div class="versiculo">
+            <p>“No os venguéis vosotros mismos, amados míos, sino dad lugar a la ira de Dios; porque escrito está: Mía es la venganza, yo pagaré, dice el Señor” (Romanos 12:19).</p>
+        </div>
+    </div>
+
+    <!-- NAVEGACIÓN (simulada) -->
+    <div class="navegacion">
+        <a href="#" class="btn">← Clase anterior: Panorama del AT</a>
+        <a href="#" class="btn">Siguiente: Profecía mesiánica →</a>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        Instituto Bíblico Reformado "Sola Scriptura" · Clase especial · Principios hermenéuticos y teología del Antiguo Testamento
+    </div>
+</footer>
+</body>
+</html>

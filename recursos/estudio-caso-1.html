@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudio de Caso No. 1: ¿Líder o Jefe? | Instituto Bíblico</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .caso-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 30px 0;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .caso-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #3498db;
+        }
+        
+        .caso-header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .caso-header .subtitulo {
+            color: #7f8c8d;
+            font-size: 1.2em;
+        }
+        
+        .personajes-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            border-left: 5px solid #3498db;
+        }
+        
+        .personajes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .personaje {
+            background: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .personaje strong {
+            color: #3498db;
+        }
+        
+        .contexto-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            border: 1px solid #ecf0f1;
+        }
+        
+        .observaciones {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        
+        .observacion-item {
+            padding: 15px;
+            margin-bottom: 10px;
+            background: white;
+            border-radius: 8px;
+            border-left: 3px solid #e74c3c;
+        }
+        
+        .preguntas-analisis {
+            background: #ecf0f1;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        
+        .pregunta {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .pregunta .numero {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 25px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .btn-descargar {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #27ae60;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .btn-descargar:hover {
+            background: #219a52;
+            transform: scale(1.05);
+        }
+        
+        .btn-volver-caso {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .btn-volver-caso:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Instituto Bíblico "Iglesia Bautista de Sola"</h1>
+            <p class="subtitle">Recursos para Liderazgo de Servicio</p>
+        </div>
+    </header>
+
+    <nav class="nav-bar">
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../asignatura.html?id=liderazgo-servicio">Liderazgo de Servicio</a></li>
+                <li><a href="#" class="activo">Estudio de Caso No. 1</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <a href="../clases/liderazgo-servicio/clase-1.html" class="btn-volver-caso">← Volver a Clase 1</a>
+        
+        <div class="caso-container">
+            <div class="caso-header">
+                <h1>Estudio de Caso No. 1</h1>
+                <h2>¿Líder o Jefe?</h2>
+                <p class="subtitulo">Análisis de estilos de liderazgo en la organización MILE</p>
+            </div>
+
+            <div class="personajes-card">
+                <h3>👥 Personajes principales</h3>
+                <div class="personajes-grid">
+                    <div class="personaje"><strong>Roberto Smith:</strong> Fundador, salió del país</div>
+                    <div class="personaje"><strong>Samuel Aquiles:</strong> Nuevo director general</div>
+                    <div class="personaje"><strong>Cristina Fuentes:</strong> Directora de contabilidad (23 años en MILE)</div>
+                    <div class="personaje"><strong>Juan Li:</strong> Director de producción</div>
+                    <div class="personaje"><strong>Rodrigo Casanova:</strong> Director de relaciones ministeriales</div>
+                </div>
+            </div>
+
+            <div class="contexto-card">
+                <h3>📋 Contexto</h3>
+                <p>Cuando Roberto Smith salió del país, Samuel Aquiles, pastor de la Primera Iglesia de los Elegidos y Redimidos de la capital, y miembro del comité de MILE, fue nombrado director general.</p>
+                
+                <p>El reverendo Aquiles se había graduado del Seminario Bíblico de la Fe y también había estudiado en el seminario de EDMUNDO. Era miembro del grupo étnico más reconocido del país, como lo son la mayoría de los líderes reconocidos de la iglesia y el gobierno. Desde su graduación ha servido en la junta directiva de varias organizaciones y es reconocido como líder cristiano a nivel nacional.</p>
+                
+                <p>Durante su cargo, se esforzó por restaurar las relaciones con la sede mundial de EDMUNDO y se hizo conocer en el extranjero. Como resultado, muchos proyectos de publicación de EDMUNDO se imprimieron en MILE, que llegó a ser la editorial cristiana líder del país. MILE ahora cuenta con 28 empleados a tiempo completo y 11 empleados a medio tiempo.</p>
+            </div>
+
+            <h3>🔍 Observaciones durante su dirección</h3>
+            <div class="observaciones">
+                <div class="observacion-item">
+                    <strong>1. Oficina y privilegios:</strong> El director general tenía la oficina más grande, una casa amplia, un vehículo de la organización para su uso personal y un chofer. En su oficina siempre había actividad, pues los gerentes siempre tenían que pedir su aprobación.
+                </div>
+                <div class="observacion-item">
+                    <strong>2. Escasez de personal calificado:</strong> Se esperaba que la mayoría del personal colaborara en lo que fuera necesario, sin importar su trasfondo o entrenamiento profesional. Los que llegaban con preparación pronto dejaban el empleo por uno mejor pagado.
+                </div>
+                <div class="observacion-item">
+                    <strong>3. Dificultad para delegar:</strong> Se le hacía difícil delegar responsabilidades; sentía necesidad de estar al tanto de lo que los demás hicieran para asegurarse de que se hiciera a su manera. Nunca olvidó la estafa de un empleado de confianza.
+                </div>
+                <div class="observacion-item">
+                    <strong>4. Personalidad reservada:</strong> Muy pocos dirían conocerlo bien; ni siquiera Cristina que lleva 23 años con MILE. Exteriormente amigable, pero en realidad muy reservado.
+                </div>
+                <div class="observacion-item">
+                    <strong>5. Visión y control:</strong> Era un gran visionario, con habilidad excepcional para expresarse y motivar a los demás, pero le gustaba mantener el control. Ejercía gran influencia en el comité, silenciando a los que no estaban de acuerdo.
+                </div>
+            </div>
+
+            <div class="preguntas-analisis">
+                <h3>❓ Preguntas para análisis y discusión</h3>
+                
+                <div class="pregunta">
+                    <span class="numero">1</span>
+                    <strong>¿Samuel Aquiles ejerce un liderazgo cultural o de servicio? ¿Por qué?</strong>
+                    <p style="margin-top: 10px; color: #7f8c8d; font-style: italic;">Analiza sus acciones a la luz de Marcos 10:45</p>
+                </div>
+                
+                <div class="pregunta">
+                    <span class="numero">2</span>
+                    <strong>¿Qué características del líder siervo están presentes o ausentes en su gestión?</strong>
+                </div>
+                
+                <div class="pregunta">
+                    <span class="numero">3</span>
+                    <strong>¿Cómo afecta su estilo de liderazgo la retención de talento en MILE?</strong>
+                </div>
+                
+                <div class="pregunta">
+                    <span class="numero">4</span>
+                    <strong>¿Qué consejo bíblico le darías a Samuel Aquiles?</strong>
+                    <p style="margin-top: 10px; color: #7f8c8d; font-style: italic;">Considera pasajes como Filipenses 2:3-8, 1 Pedro 5:2-3</p>
+                </div>
+                
+                <div class="pregunta">
+                    <span class="numero">5</span>
+                    <strong>¿En qué nivel de liderazgo (1-5) ubicarías a Samuel Aquiles? Justifica tu respuesta.</strong>
+                </div>
+                
+                <div class="pregunta">
+                    <span class="numero">6</span>
+                    <strong>¿Qué cambios debería implementar para desarrollar un liderazgo más saludable y bíblico?</strong>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="#" class="btn-descargar" onclick="window.print(); return false;">
+                    🖨️ Imprimir / Guardar como PDF
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Instituto Bíblico "Iglesia Bautista de Sola" - Liderazgo de Servicio (IB-MT-702)</p>
+        </div>
+    </footer>
+</body>
+</html>
