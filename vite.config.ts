@@ -1,7 +1,8 @@
-import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import { vitePages } from '@kingironman2011/vite-pages'
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), vitePages()],
+  base: '/Nueva-Plataforma-del-iB-de-Sola/',
 })
