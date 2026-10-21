@@ -23,6 +23,7 @@ import {
 import { ASIGNATURAS } from "../data/instituto";
 import { SubjectIcon } from "../components/SubjectIcon";
 import type { Recurso } from "../types";
+import { publicUrl } from "../utils/url";
 
 type Tab = "info" | "clases" | "silabo" | "evaluacion" | "recursos";
 
@@ -258,7 +259,7 @@ export function AsignaturaDetalle() {
                       return (
                         <a
                           key={i}
-                          href={clase.url.startsWith("http") ? clase.url : `/viewer.html?url=${encodeURIComponent(clase.url)}`}
+                          href={publicUrl(clase.url)}
                           target={clase.url.startsWith("http") ? "_blank" : "_self"}
                           rel="noreferrer"
                           className="clase-item"
@@ -588,7 +589,7 @@ export function AsignaturaDetalle() {
                     return (
                       <a
                         key={i}
-                        href={r.url === "#" ? undefined : r.url}
+                        href={r.url === "#" ? undefined : publicUrl(r.url)}
                         target={isExternal ? "_blank" : undefined}
                         rel="noreferrer"
                         className="recurso-item"

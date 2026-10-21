@@ -664,3 +664,87 @@ em { font-style: italic; }
   .subtitulo-clase { font-size: 1rem; }
   .meta-info { flex-direction: column; gap: 6px; }
 }
+
+/* =====================================================================
+   v2 — MEJORAS DE DISEÑO + CAPA DE COMPATIBILIDAD
+   (unifica las lecciones antiguas que dependían de styles.css)
+   ===================================================================== */
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+body.clase-body, body.tecnicas-body, body.liderazgo-body, body.lesson { background: var(--cream-2); }
+.clase-container, main.container { padding-top: 48px; padding-bottom: 80px; }
+
+/* Barra de lectura fija */
+#lectura-barra { position: fixed; top: 0; left: 0; height: 3px; width: 0; z-index: 100;
+  background: linear-gradient(90deg, var(--subject-color), var(--gold-2)); transition: width .1s linear; }
+
+/* Barra superior fija con navegación */
+.lesson-topbar { position: sticky; top: 0; z-index: 90; display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; padding: 10px 24px; background: rgba(15,30,61,.94); backdrop-filter: blur(10px); color: var(--cream);
+  border-bottom: 1px solid rgba(212,178,90,.2); font-size: .85rem; }
+.lesson-topbar a { color: var(--gold-2); text-decoration: none; font-weight: 600; padding: 5px 12px; border: 1px solid rgba(212,178,90,.35); border-radius: 999px; }
+.lesson-topbar a:hover { background: rgba(212,178,90,.12); }
+.lesson-topbar .crumb { opacity: .85; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* Índice de la lección (generado por JS a partir de los h2) */
+.lesson-toc { background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--gold);
+  border-radius: var(--r-lg); padding: 18px 24px; margin: 0 0 32px; box-shadow: var(--shadow-sm); }
+.lesson-toc strong { display: block; font-family: var(--mono); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 8px; }
+.lesson-toc ol { margin: 0; padding-left: 1.2em; columns: 2; column-gap: 32px; }
+.lesson-toc li { break-inside: avoid; margin: 3px 0; font-size: .95rem; }
+.lesson-toc a { color: var(--ink-2); text-decoration: none; }
+.lesson-toc a:hover { color: var(--subject-color); text-decoration: underline; }
+@media (max-width: 640px) { .lesson-toc ol { columns: 1; } }
+
+/* Tipografía de lectura */
+main h2 { font-family: var(--serif); font-size: 1.9rem; line-height: 1.2; color: var(--navy); margin: 2.2rem 0 .8rem; }
+main h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--subject-color); margin: 1.6rem 0 .5rem; }
+main p { max-width: 70ch; }
+main li { margin: .25em 0; }
+main a { color: var(--subject-color); }
+main table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: .95rem; background: #fff; border-radius: var(--r-md); overflow: hidden; box-shadow: var(--shadow-sm); display: block; overflow-x: auto; }
+main th { background: var(--navy); color: var(--cream); text-align: left; padding: 11px 14px; font-weight: 600; }
+main td { padding: 10px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+main tr:nth-child(even) td { background: rgba(247,242,232,.5); }
+blockquote, .versiculo-destacado, .cita-clase, .verse-quote, .cita-reformada { font-family: var(--serif); font-size: 1.25rem; font-style: italic;
+  border-left: 4px solid var(--gold); background: linear-gradient(90deg, rgba(184,147,67,.10), transparent); padding: 16px 22px; margin: 1.4rem 0; border-radius: 0 var(--r-md) var(--r-md) 0; color: var(--ink-2); }
+
+/* Tarjetas genéricas (cubre ~60 clases antiguas: *-card, *-box…) */
+main [class*="-card"]:not(.objetivo-card):not(.progreso-clase), main [class*="-box"]:not(.box) {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); padding: 22px 26px; margin: 0 0 22px; box-shadow: var(--shadow-sm); }
+main [class*="-card"] [class*="-card"], main [class*="-card"] [class*="-box"] { box-shadow: none; background: var(--cream-2); padding: 16px 18px; }
+main [class*="-grid"], main .estructura-clase, main .navegacion-horas { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); margin: 18px 0; }
+main [class*="-grid"] > * { margin: 0 !important; }
+main .grid-2col, main .grid-2cols, main .estilo-grid-2cols { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+main [class*="-card"] > h3:first-child, main [class*="-card"] > h4:first-child { margin-top: 0; }
+
+/* Acentos por tipo de contenido */
+main .destacado, main .highlight, main .highlight-box, main .definicion-grande, main .estilo-frase-principal { border-left: 4px solid var(--gold); background: rgba(184,147,67,.08); }
+main .warning-box, main .errores-card { border-left: 4px solid var(--danger); background: rgba(155,44,44,.05); }
+main .tarea-card, main .oracion-card, main .reflexion-box, main .compromiso-card { border-left: 4px solid var(--success); }
+main .debate-card, main .dinamica-card, main .caso-card { border-left: 4px solid var(--wine); }
+main .versiculo-destacado .referencia, main .versiculo-contenido { font-style: normal; }
+
+/* Niveles de liderazgo (pirámide) */
+.piramide-liderazgo { display: flex; flex-direction: column-reverse; gap: 8px; margin: 20px 0; }
+.nivel { display: flex; gap: 14px; align-items: center; padding: 12px 18px; border-radius: var(--r-md); color: #fff; background: var(--navy-2); }
+.nivel1 { background: #5B7C99; } .nivel2 { background: #3F6A8A; } .nivel3 { background: #2C4A6E; } .nivel4 { background: #1E3A5F; } .nivel5 { background: #8B2635; }
+.nivel-numero, .numero { font-family: var(--serif); font-size: 1.6rem; font-weight: 700; color: var(--gold-3); }
+
+/* Navegación entre clases */
+.navegacion, .navegacion-clases, .navegacion-horas, .botones-navegacion { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; margin: 40px 0 0; }
+.btn, .btn-anterior, .btn-siguiente, .btn-volver-clase, .btn-caso, .btn-deshabilitado, .btn-siguiente-deshabilitado {
+  display: inline-flex; align-items: center; gap: 8px; padding: 11px 20px; border-radius: 999px; font-weight: 600; font-size: .92rem;
+  text-decoration: none; background: var(--navy); color: var(--cream) !important; border: 1px solid transparent; transition: transform .15s, background .15s; }
+.btn:hover, .btn-anterior:hover, .btn-siguiente:hover, .btn-volver-clase:hover, .btn-caso:hover { background: var(--subject-color); transform: translateY(-2px); }
+.btn-anterior, .btn-volver-clase { background: transparent; color: var(--navy) !important; border-color: var(--line-2); }
+.btn-deshabilitado, .btn-siguiente-deshabilitado, .btn-proximamente { background: var(--parchment); color: var(--ink-4) !important; cursor: not-allowed; pointer-events: none; }
+.clase-actual { font-weight: 700; color: var(--subject-color); }
+
+/* Impresión limpia */
+@media print { .lesson-topbar, #lectura-barra, .lesson-toc, .botones-navegacion, .navegacion, .navegacion-clases { display: none !important; }
+  body { background: #fff; font-size: 12pt; } main [class*="-card"] { box-shadow: none; break-inside: avoid; } }
+@media (max-width: 640px) { body { font-size: 16px; } main h2 { font-size: 1.6rem; } .lesson-topbar { padding: 8px 14px; } .lesson-topbar .crumb { display: none; } }
+
+body[data-volver] .header-nav .btn-volver { display: none; }
+body[data-volver] .header-nav { justify-content: flex-end; }
+.progreso-barra > div { background: linear-gradient(90deg, var(--subject-color), var(--gold-2)); min-height: 100%; border-radius: inherit; }
