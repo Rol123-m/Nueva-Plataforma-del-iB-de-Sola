@@ -77,7 +77,7 @@
     var item = document.createElement('li');
     var link = document.createElement('a');
     link.href = '#' + heading.id;
-    link.textContent = heading.textContent.replace(/^[^\\p{L}\\p{N}]+/u, '').trim();
+    link.textContent = heading.textContent.trim();
     item.appendChild(link);
     list.appendChild(item);
   });
