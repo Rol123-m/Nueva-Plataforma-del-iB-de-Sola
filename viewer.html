@@ -49,7 +49,7 @@
         <span class="badge">Material de clase</span>
         <span class="title" id="title">Cargando…</span>
       </div>
-      <a href="javascript:history.back()">← Volver</a>
+      <a id="back-link" href="/Nueva-Plataforma-del-iB-de-Sola/">← Volver a la asignatura</a>
     </div>
     <div class="frame-wrap">
       <iframe id="frame" src="" title="Material de clase"></iframe>
@@ -58,6 +58,9 @@
       const params = new URLSearchParams(window.location.search);
       const url = params.get('url');
       const title = params.get('title') || 'Material de clase';
+      const returnTo = params.get('returnTo') || '/';
+      const safeReturnTo = returnTo.startsWith('/') && !returnTo.startsWith('//') ? returnTo : '/';
+      document.getElementById('back-link').href = '/Nueva-Plataforma-del-iB-de-Sola' + safeReturnTo;
       document.getElementById('title').textContent = decodeURIComponent(title);
       if (url) {
         document.getElementById('frame').src = decodeURIComponent(url);
