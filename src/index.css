@@ -1771,3 +1771,74 @@ em { font-style: italic; }
   background: white;
   box-shadow: var(--shadow-md);
 }
+
+
+/* ===== REFINAMIENTO VISUAL DE LA PLATAFORMA ===== */
+:root { color-scheme: light; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: rgba(184, 147, 67, .22); color: var(--navy); }
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--gold-2);
+  outline-offset: 3px;
+}
+.card, .asignatura-card, .anuncio-card, .module-banner,
+.requisitos-card, .esp-card, .modulo-card {
+  box-shadow: 0 8px 28px rgba(15, 30, 61, .055);
+}
+.card, .asignatura-card, .anuncio-card, .esp-card, .modulo-card {
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.card:hover, .asignatura-card:hover, .anuncio-card:hover,
+.esp-card:hover, .modulo-card:hover {
+  box-shadow: 0 16px 38px rgba(15, 30, 61, .10);
+}
+.hero h1, .subject-hero h1, .section-head h2 { text-wrap: balance; }
+.hero h1 { letter-spacing: -.035em; }
+.hero-lead, .subject-hero .lead { max-width: 68ch; }
+.section-head { gap: 22px; }
+.section-head .eyebrow { letter-spacing: .14em; }
+.tabs-bar {
+  position: sticky;
+  top: var(--header-h, 76px);
+  z-index: 30;
+  backdrop-filter: blur(14px);
+}
+.tabs {
+  overflow-x: auto;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+.tab { white-space: nowrap; }
+.clases-list, .recursos-list { gap: 12px; }
+.clase-item, .recurso-item {
+  border-radius: 14px;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.clase-item:not(.disabled):hover, .recurso-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(15, 30, 61, .08);
+}
+.subject-hero .meta-grid {
+  border: 1px solid rgba(212, 178, 90, .22);
+  box-shadow: 0 12px 32px rgba(15, 30, 61, .06);
+}
+.site-footer { margin-top: 96px; }
+@media (max-width: 768px) {
+  html { scroll-padding-top: 70px; }
+  .tabs-bar { top: var(--header-h, 64px); }
+  .tabs { margin-inline: -18px; padding-inline: 18px; }
+  .site-footer { margin-top: 64px; padding-top: 58px; }
+  .section { padding-block: 48px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
