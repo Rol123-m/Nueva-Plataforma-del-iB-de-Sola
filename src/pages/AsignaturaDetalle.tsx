@@ -259,7 +259,7 @@ export function AsignaturaDetalle() {
                       return (
                         <a
                           key={i}
-                          href={clase.url.startsWith("http") ? clase.url : publicUrl(`viewer.html?url=${encodeURIComponent(clase.url)}&title=${encodeURIComponent(clase.nombre)}`)}
+                          href={clase.url.startsWith("http") ? clase.url : publicUrl(`viewer.html?url=${encodeURIComponent(clase.url)}&title=${encodeURIComponent(clase.nombre)}&returnTo=${encodeURIComponent(`/asignatura/${id}`)}`)}
                           target={clase.url.startsWith("http") ? "_blank" : "_self"}
                           rel="noreferrer"
                           className="clase-item"
